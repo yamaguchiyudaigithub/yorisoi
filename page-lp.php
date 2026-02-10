@@ -7,7 +7,7 @@ $theme_uri = get_template_directory_uri();
 ?>
 
 <main class="p-top-dx">
-  <section class="p-top-dx__fv is-inview" id="top">
+  <section class="p-top-dx__fv " id="top">
     <div class="p-top-dx__fv-inner">
       <div class="p-top-dx__fv-copy p-top-dx__fv-copy-top">
         <p class="p-top-dx__badge">頼れる院内エンジニア！</p>
@@ -25,7 +25,7 @@ $theme_uri = get_template_directory_uri();
         <div class="p-top-dx__fv-media-wrap">
           <picture>
             <source srcset="<?php echo esc_url( $theme_uri ); ?>/assets/images/fv_img01.webp" media="(min-width: 768px)">
-            <img src="<?php echo esc_url( $theme_uri ); ?>/assets/images/fv_img01-sp@2x.webp" width="375" height="500" alt="" />
+            <img src="<?php echo esc_url( $theme_uri ); ?>/assets/images/fv_img01-sp@2x.webp" alt="" />
           </picture>
         </div>
       </div>
@@ -116,7 +116,7 @@ $theme_uri = get_template_directory_uri();
         </div>
 
         <div class="p-top-dx__problems-cta-actions">
-          <p class="p-top-dx__problems-cta-actions-note"><span class="u-mobile">初回は忙しい先生でも安心の<br>オンライン商談！</span><span class="u-desktop">初回は忙しい先生でも安心のオンライン商談！まずは気軽にご相談ください！</span></p>
+          <p class="p-top-dx__problems-cta-actions-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談！<span class="u-desktop">まずは気軽にご相談ください！</span></p>
           <a class="p-top-dx__problems-cta-actions-btn c-dx-cta c-dx-cta--lg" href="/contact/">
             <span class="c-dx-cta__text">まずは気軽に無料相談</span>
             <span class="c-dx-cta__icon" aria-hidden="true"></span>
@@ -136,8 +136,8 @@ $theme_uri = get_template_directory_uri();
           </div>
           <div class="p-top-dx__feature-intro-center">
             <p class="p-top-dx__section-lead">
-            医療現場に“寄り添う”<br class="u-mobile">DX化サポート。<br />
-            専任のITエンジニアが、<br class="u-mobile">医師の右腕になります。
+            医療現場に“寄り添う”<br class="u-mobile u-tablet">DX化サポート。<br />
+            専任のITエンジニアが、<br class="u-mobile u-tablet">医師の右腕になります。
             </p>
             <p class="p-top-dx__section-sub p-top-dx__feature-intro-text">
             現役のシステムエンジニアや<span class="p-top-dx__nowrap">Webマーケター</span>が、月1回の定期ミーティングを通じて<br />
@@ -160,7 +160,7 @@ $theme_uri = get_template_directory_uri();
               <p class="p-top-dx__feature-no">POINT <span class="p-top-dx__feature-no-num">01</span></p>
               <h3 class="p-top-dx__feature-title">医療現場に強い<br class="u-mobile">ITエンジニアが担当</h3>
             </div>
-            <p class="p-top-dx__feature-desc">業界特有のルールや<br class="u-mobile"><span class="p-top-dx__feature-accent">個人情報管理を理解</span>した<br class="u-mobile"><span class=" p-top-dx__feature-accent--red">プロ</span>が対応。</p>
+            <p class="p-top-dx__feature-desc">業界特有のルールや<br class="u-mobile"><span class="p-top-dx__feature-accent">個人情報管理を理解</span>した、<wbr><br class="u-mobile"><span class=" p-top-dx__feature-accent--red">プロ</span>が対応。</p>
           </div>
         </li>
         <li class="p-top-dx__feature-item p-top-dx__feature-item--img-right">
@@ -169,7 +169,7 @@ $theme_uri = get_template_directory_uri();
               <p class="p-top-dx__feature-no">POINT <span class="p-top-dx__feature-no-num">02</span></p>
               <h3 class="p-top-dx__feature-title">月額5万円から始められる、安心の定額制</h3>
             </div>
-            <p class="p-top-dx__feature-desc"><span class="p-top-dx__feature-accent p-top-dx__feature-accent--teal-bg">導入コストを抑えつつ、</span><span class="p-top-dx__feature-accent--red">継続的</span>な改善が可能。</p>
+            <p class="p-top-dx__feature-desc"><span class="p-top-dx__feature-accent p-top-dx__feature-accent--teal-bg">導入コストを抑えつつ、<wbr></span><span class="p-top-dx__feature-accent--red">継続的</span>な改善が可能。<wbr></p>
             <p class="p-top-dx__feature-note">
                 参考：ITエンジニア（コンサルクラスのハイレベルエンジニア）<br />
                 一人当たりの月額単価は約100万円〜と高額です。
@@ -188,7 +188,7 @@ $theme_uri = get_template_directory_uri();
               <p class="p-top-dx__feature-no">POINT <span class="p-top-dx__feature-no-num">03</span></p>
               <h3 class="p-top-dx__feature-title">「提案だけ」で終わらない伴走支援</h3>
             </div>
-            <p class="p-top-dx__feature-desc"><span class="p-top-dx__feature-accent">課題整理から実行サポートまで、</span><span class="p-top-dx__feature-accent--red">一貫</span>して寄り添います。</p>
+            <p class="p-top-dx__feature-desc"><span class="p-top-dx__feature-accent">課題整理から実行サポートまで、<wbr></span><span class="p-top-dx__feature-accent--red">一貫</span>して寄り添います。<wbr></p>
           </div>
         </li>
       </ol>
@@ -367,7 +367,7 @@ $theme_uri = get_template_directory_uri();
           </h2>
 
       <div class="p-top-dx__cta-actions">
-        <p class="p-top-dx__cta-note">初回は忙しい先生でも安心のオンライン商談。<span class="u-desktop">まずは気軽にご相談ください！</span></p>
+        <p class="p-top-dx__cta-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談。<span class="u-desktop">まずは気軽にご相談ください！</span></p>
         <a class="c-dx-cta c-dx-cta--lg" href="/contact/">
           <span class="c-dx-cta__text">まずは気軽に無料相談</span>
           <span class="c-dx-cta__icon" aria-hidden="true"></span>
@@ -513,7 +513,7 @@ $theme_uri = get_template_directory_uri();
           </h2>
 
       <div class="p-top-dx__cta-actions">
-        <p class="p-top-dx__cta-note">初回は忙しい先生でも安心のオンライン商談。まずは気軽にご相談ください！</p>
+        <p class="p-top-dx__cta-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談。<span class="u-desktop">まずは気軽にご相談ください！</span></p>
         <a class="c-dx-cta c-dx-cta--lg" href="/contact/">
           <span class="c-dx-cta__text">まずは気軽に無料相談</span>
           <span class="c-dx-cta__icon" aria-hidden="true"></span>
