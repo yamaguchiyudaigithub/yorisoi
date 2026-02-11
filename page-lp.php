@@ -37,7 +37,7 @@ $theme_uri = get_template_directory_uri();
             </p>
 
         <div class="p-top-dx__fv-actions">
-          <p class="p-top-dx__fv-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談！
+          <p class="p-top-dx__fv-note">初回は忙しい先生でも<br class="u-mobile">安心のオンライン商談！
             <span class="u-desktop"><br />まずは気軽にご相談ください！</span></p>
           <a class="c-dx-cta c-dx-cta--lg" href="/contact/">
             <span class="c-dx-cta__text">まずは気軽に無料相談</span>
@@ -48,10 +48,10 @@ $theme_uri = get_template_directory_uri();
     </div>
   </section>
 
-  <section class="p-top-dx__problems" id="problems">
+  <section class="p-top-dx__problems p-top-dx__problems-cta" id="problems" aria-labelledby="problems-cta-head">
     <div class="p-top-dx__container">
       <h2 class="p-top-dx__problems-title">
-            <span class="p-top-dx__problems-title-line"> 院内の<span class="p-top-dx__problems-title-accent">DX化</span>が進まない・・ </span>
+            <span class="p-top-dx__problems-title-line">院内の<span class="p-top-dx__problems-title-accent">DX化</span>が進まない・・</span>
             <span class="p-top-dx__problems-title-line">そんなお悩みありませんか？</span>
           </h2>
       <ul class="p-top-dx__problem-list">
@@ -85,42 +85,39 @@ $theme_uri = get_template_directory_uri();
         </li>
       </ul>
 
-      <p class="p-top-dx__problems-message">
+      <div class="p-top-dx__problems-cta-area">
+        <p class="p-top-dx__problems-message">
             それって、<br class="u-mobile">機器やシステムの問題ではなく、<br />
             "<span class="p-top-dx__problems-message-em">院内エンジニア</span>"がいないことが<br class="u-mobile">原因かも。
           </p>
 
-    </div>
-  </section>
-
-  <section class="p-top-dx__problems-cta" aria-labelledby="problems-cta-head">
-    <div class="p-top-dx__container">
-      <div class="p-top-dx__problems-cta-card">
-        <div class="p-top-dx__problems-ribbon" aria-hidden="true">
-          <p class="p-top-dx__problems-ribbon-text">
+        <div class="p-top-dx__problems-cta-card">
+          <div class="p-top-dx__problems-ribbon" aria-hidden="true">
+            <p class="p-top-dx__problems-ribbon-text">
             <span class="p-top-dx__problems-ribbon-line1">月額5万円から</span><br />
             <span class="p-top-dx__problems-ribbon-line2">相談OK！</span>
           </p>
-        </div>
+          </div>
 
-        <h3 id="problems-cta-head" class="p-top-dx__problems-cta-head">「院内にITエンジニアが<br class="u-mobile">いれば・・」</h3>
+          <h3 id="problems-cta-head" class="p-top-dx__problems-cta-head">「院内にITエンジニアが<br class="u-mobile">いれば・・」</h3>
 
-        <div class="p-top-dx__problems-cta-brandline">
-          <span class="p-top-dx__problems-cta-brandline-text">その想いに応えるのが</span>
-          <span class="p-top-dx__problems-brand">
-            <img class="p-top-dx__problems-brand-logo" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/yorisoi_logo.PYxNSU74.png" width="416" height="96" alt="よりそいDX" />
-            <span class="p-top-dx__problems-brand-edition-line">
-              <span class="p-top-dx__problems-brand-edition">医療版</span> <span class="p-top-dx__problems-cta-brandline-text">です！</span>
+          <div class="p-top-dx__problems-cta-brandline">
+            <span class="p-top-dx__problems-cta-brandline-text">その想いに応えるのが</span>
+            <span class="p-top-dx__problems-brand">
+              <img class="p-top-dx__problems-brand-logo" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/yorisoi_logo.PYxNSU74.png" width="416" height="96" alt="よりそいDX" />
+              <span class="p-top-dx__problems-brand-edition-line">
+                <span class="p-top-dx__problems-brand-edition">医療版</span> <span class="p-top-dx__problems-cta-brandline-text">です！</span>
+              </span>
             </span>
-          </span>
-        </div>
+          </div>
 
-        <div class="p-top-dx__problems-cta-actions">
-          <p class="p-top-dx__problems-cta-actions-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談！<span class="u-desktop">まずは気軽にご相談ください！</span></p>
-          <a class="p-top-dx__problems-cta-actions-btn c-dx-cta c-dx-cta--lg" href="/contact/">
-            <span class="c-dx-cta__text">まずは気軽に無料相談</span>
-            <span class="c-dx-cta__icon" aria-hidden="true"></span>
-          </a>
+          <div class="p-top-dx__problems-cta-actions">
+            <p class="p-top-dx__problems-cta-actions-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談！<span class="u-desktop">まずは気軽にご相談ください！</span></p>
+            <a class="p-top-dx__problems-cta-actions-btn c-dx-cta c-dx-cta--lg" href="/contact/">
+              <span class="c-dx-cta__text">まずは気軽に無料相談</span>
+              <span class="c-dx-cta__icon" aria-hidden="true"></span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -160,7 +157,7 @@ $theme_uri = get_template_directory_uri();
               <p class="p-top-dx__feature-no">POINT <span class="p-top-dx__feature-no-num">01</span></p>
               <h3 class="p-top-dx__feature-title">医療現場に強い<br class="u-mobile">ITエンジニアが担当</h3>
             </div>
-            <p class="p-top-dx__feature-desc">業界特有のルールや<br class="u-mobile"><span class="p-top-dx__feature-accent">個人情報管理を理解</span>した、<wbr><br class="u-mobile"><span class=" p-top-dx__feature-accent--red">プロ</span>が対応。</p>
+            <p class="p-top-dx__feature-desc">業界特有のルールや<br class="u-mobile"><span class="p-top-dx__feature-accent">個人情報管理を理解</span>した<wbr><br class="u-mobile"><span class=" p-top-dx__feature-accent--red">プロ</span>が対応。</p>
           </div>
         </li>
         <li class="p-top-dx__feature-item p-top-dx__feature-item--img-right">
@@ -365,7 +362,6 @@ $theme_uri = get_template_directory_uri();
             <span class="p-top-dx__cta-title-line1">まずは、お話ししてみませんか？</span><br />
             <span class="p-top-dx__cta-title-line2">DX化の第一歩は“<span class="p-top-dx__cta-accent">相談</span>”から。</span>
           </h2>
-
       <div class="p-top-dx__cta-actions">
         <p class="p-top-dx__cta-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談。<span class="u-desktop">まずは気軽にご相談ください！</span></p>
         <a class="c-dx-cta c-dx-cta--lg" href="/contact/">
@@ -373,7 +369,6 @@ $theme_uri = get_template_directory_uri();
           <span class="c-dx-cta__icon" aria-hidden="true"></span>
         </a>
       </div>
-
       <div class="p-top-dx__cta-steps-wrap">
         <div class="p-top-dx__cta-steps">
           <div class="p-top-dx__cta-step">
@@ -396,19 +391,17 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="p-top-dx__cta-message">
-      <img class="p-top-dx__cta-pointing" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/cta_img04.webp" width="209" height="197" alt="" />
-      <div class="p-top-dx__cta-message-text">
-        <p class="p-top-dx__cta-message-lead">
+      <div class="p-top-dx__cta-message">
+        <img class="p-top-dx__cta-pointing" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/cta_img04.webp" width="209" height="197" alt="" />
+        <div class="p-top-dx__cta-message-text">
+          <p class="p-top-dx__cta-message-lead">
                 <span>オンライン商談後、</span>
                 <span class="p-top-dx__cta-message-accent">貴院に訪問し、更に詳細のヒアリング</span>
                 <span>をさせていただきます。</span>
               </p>
-        <p class="p-top-dx__cta-message-strong">まずはお気軽にご相談ください！</p>
+          <p class="p-top-dx__cta-message-strong">まずはお気軽にご相談ください！</p>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -542,19 +535,17 @@ $theme_uri = get_template_directory_uri();
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="p-top-dx__cta-message">
-      <img class="p-top-dx__cta-pointing" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/cta_img04.webp" width="209" height="197" alt="" />
-      <div class="p-top-dx__cta-message-text">
-        <p class="p-top-dx__cta-message-lead">
+      <div class="p-top-dx__cta-message">
+        <img class="p-top-dx__cta-pointing" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/cta_img04.webp" width="209" height="197" alt="" />
+        <div class="p-top-dx__cta-message-text">
+          <p class="p-top-dx__cta-message-lead">
                 <span>オンライン商談後、</span>
                 <span class="p-top-dx__cta-message-accent">貴院に訪問し、更に詳細のヒアリング</span>
                 <span>をさせていただきます。</span>
               </p>
-        <p class="p-top-dx__cta-message-strong">まずはお気軽にご相談ください！</p>
+          <p class="p-top-dx__cta-message-strong">まずはお気軽にご相談ください！</p>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 </main>
