@@ -12,9 +12,11 @@
   padding: 0 16px;
 }
 
+/* SP：フルイド＋最大幅コンテナ方針（640px・padding 16px） */
 @media (max-width: 767px) {
   .container {
-    max-width: 375px;
+    max-width: 640px;
+    padding-inline: 16px;
   }
 }
 
@@ -132,7 +134,6 @@ html {
 *,
 ::before,
 ::after {
-  /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
   -webkit-box-sizing: border-box;
@@ -143,13 +144,11 @@ html {
 ::before,
 ::after {
   text-decoration: inherit;
-  /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
   vertical-align: inherit;
 }
 
 * {
   padding: 0;
-  /* Reset `padding` and `margin` of all elements */
   margin: 0;
 }
 
@@ -187,8 +186,6 @@ small {
 }
 
 abbr[title] {
-  /* Remove the bottom border in Chrome 57 */
-  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
@@ -197,13 +194,11 @@ abbr[title] {
 
 a {
   background-color: transparent;
-  /* Remove the gray background on active links in IE 10 */
 }
 
 a:active,
 a:hover {
   outline-width: 0;
-  /* Remove the outline when hovering in all browsers */
 }
 
 code,
@@ -211,21 +206,17 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  /* Specify the font family of code elements */
 }
 
 pre {
   font-size: 1em;
-  /* Correct the odd `em` font sizing in all browsers */
 }
 
 b,
 strong {
   font-weight: bolder;
-  /* Add the correct font weight in Chrome, Edge, and Safari */
 }
 
-/* https://gist.github.com/unruthless/413930 */
 sub,
 sup {
   position: relative;
@@ -347,7 +338,6 @@ html [type="button"],
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
-  /* Correct the inability to style clickable types in iOS */
 }
 
 button,
@@ -369,7 +359,6 @@ textarea:focus {
   outline-width: 0;
 }
 
-/* Style select like a standard input */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -599,7 +588,6 @@ picture {
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
@@ -614,7 +602,6 @@ button {
   background-color: initial;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
@@ -935,7 +922,6 @@ button {
     -webkit-box-shadow 0.2s ease;
 }
 
-/* ホバー（Figma 89:1066）：白背景・ティール枠・ティール文字・浮き影 */
 .c-dx-cta:hover {
   background: #fff;
   color: #2b858d;
@@ -979,11 +965,11 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   content: "";
-  border-top: 3px solid #2b858d;
-  border-right: 3px solid #2b858d;
+  border-top: 2px solid #2b858d;
+  border-right: 2px solid #2b858d;
   rotate: 45deg;
   translate: -60% -50%;
   -webkit-transition:
@@ -2000,7 +1986,6 @@ button {
   transform: translateY(-0.42475rem) rotate(-45deg);
 }
 
-/* グローバルナビ開閉時（Figma 83-182）：背景画像は .p-header__drawer-bg で表示 */
 .p-header__drawer {
   position: fixed;
   inset: 0;
@@ -2011,10 +1996,9 @@ button {
   padding: 7.5rem clamp(16px, 4vw, 80px) 3.5rem;
   overflow-y: auto;
   opacity: 0;
-  background-color: #ebf4f6; /* 画像未読込時・背面透過防止 */
+  background-color: #eaf7f9;
 }
 
-/* 背景画像 ※ background-image のURLは header.php でインライン出力 */
 .p-header__drawer-bg {
   position: absolute;
   top: 0;
@@ -2027,13 +2011,11 @@ button {
   background-repeat: no-repeat;
 }
 
-/* ドロワーコンテンツを背景画像の手前に */
 .p-header__drawer-inner {
   position: relative;
   z-index: 2;
 }
 
-/* ドロワー内の閉じるボタン：ハンバーガーと同じマークアップで×表示（.p-header__hamburger.is-open のスタイルを利用） */
 .p-header__drawer-close.p-header__hamburger {
   position: fixed;
   top: 1.75rem;
@@ -2075,7 +2057,6 @@ button {
   min-width: 0;
 }
 
-/* ドロワーリンク（ホバー時 Figma 89-1065：赤い下線・文字幅より少しはみ出し・太め） */
 .p-header__drawer-link {
   position: relative;
   display: inline-block;
@@ -2215,7 +2196,6 @@ button {
   text-align: center;
 }
 
-/* PC：ドロワーCTAはボタン→注釈の順で表示（従来どおり） */
 @media screen and (min-width: 768px) {
   .p-header__drawer-cta-area {
     display: -webkit-box;
@@ -2240,7 +2220,6 @@ button {
   }
 }
 
-/* SP：FV（problems-cta-actions）と同じレイアウト（注釈＋斜めライン、ボタンサイズ） */
 @media screen and (max-width: 767px) {
   .p-header__drawer-cta-area {
     display: -webkit-box;
@@ -2260,7 +2239,7 @@ button {
     padding: 0 2rem;
     font-size: clamp(14px, 3.5vw, 16px);
     font-weight: 500;
-    color: #2b767e;
+    color: #2b858d;
   }
   .p-header__drawer-note::before,
   .p-header__drawer-note::after {
@@ -2269,7 +2248,7 @@ button {
     width: 2.75rem;
     height: 3px;
     content: "";
-    background: #2b767e;
+    background: #2b858d;
     border-radius: 9999px;
     -webkit-transform-origin: center;
     transform-origin: center;
@@ -2289,9 +2268,9 @@ button {
     padding: 1.125rem 5.5rem 1.125rem 2rem;
     width: 100%;
     max-width: 720px;
-    background: #338c8b;
-    -webkit-box-shadow: 0 4px 12px rgba(51, 140, 139, 0.35);
-    box-shadow: 0 4px 12px rgba(51, 140, 139, 0.35);
+    background: #2b858d;
+    -webkit-box-shadow: 0 4px 12px rgba(43, 133, 141, 0.35);
+    box-shadow: 0 4px 12px rgba(43, 133, 141, 0.35);
   }
   .p-header__drawer-cta-text {
     font-size: clamp(18px, 2vw, 35px);
@@ -2430,7 +2409,6 @@ button {
 .p-sample__bg {
   width: 300px;
   aspect-ratio: 1/1;
-  /* NOTE: postcss-cssnext 内の image-set polyfill が type() 付き構文で落ちるため、単純なURL指定にする */
   background-image: url("../images/bg_sample.CshM3Il0.png");
   background-size: contain;
 }
@@ -2552,7 +2530,6 @@ button {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  /* FVは最初から表示されるのでアニメーションさせず、初期状態を維持 */
   .p-top-dx__fv > * {
     opacity: 1 !important;
     -webkit-transform: none !important;
@@ -2573,15 +2550,16 @@ button {
   .p-top-dx__container,
   .p-top-dx__problems .p-top-dx__container,
   .p-top-dx__features .p-top-dx__container,
-  .p-top-dx__cases .p-top-dx__container,
   .p-top-dx__plan .p-top-dx__container,
   .p-top-dx__flow .p-top-dx__container,
   .p-top-dx__company .p-top-dx__container,
   .p-top-dx__cta .p-top-dx__container,
   .p-top-dx__bottom-cta .p-top-dx__container,
   .p-top-dx__staff .p-top-dx__container {
-    max-width: 375px;
+    max-width: 640px;
+    padding-inline: 16px;
   }
+  /* cases：カード幅に合わせて375px（固定幅） */
   .p-top-dx__plan-table-wrap {
     margin-inline: -16px;
     padding-inline: 16px;
@@ -2603,7 +2581,7 @@ button {
 @media (min-width: 768px) {
   .p-top-dx__staff .p-top-dx__container {
     width: min(1520px, calc(1424 * 100vw / 1920 + 96px));
-    max-width: 1520px; /* 1424 + 2 * 48 (padding) at 1920 */
+    max-width: 1520px;
     margin-inline: auto;
     padding-inline: clamp(1rem, 2.5vw, 3rem);
     -webkit-box-sizing: border-box;
@@ -2639,8 +2617,8 @@ button {
 }
 
 .p-top-dx__section-sub {
-  margin: 1rem 0 0;
-  font-size: clamp(18px, 2.2vw, 30px);
+  margin: 1.25rem 0 0;
+  font-size: clamp(18px, 3vw, 30px);
   font-weight: 700;
   line-height: 1.8;
   text-align: center;
@@ -2651,18 +2629,18 @@ button {
    ----------------------------------------------------------------- */
 .p-top-dx__fv {
   position: relative;
-  background: #e0f2f7;
+  background: #eaf7f9;
   overflow-x: clip;
 }
 
 @media (min-width: 768px) {
   .p-top-dx__fv {
-    background: #ebf8fb;
-    overflow: clip; /* 画像がFVからはみ出さない */
+    background: #eaf7f9;
+    overflow: clip;
   }
 }
 .p-top-dx__fv-title-accent {
-  color: #0097a7;
+  color: #2b858d;
 }
 
 @media (min-width: 768px) {
@@ -2671,29 +2649,29 @@ button {
   }
 }
 .p-top-dx__fv .c-dx-cta {
-  background: #2c8a8f !important;
+  background: #2b858d !important;
   -webkit-box-shadow: 0 4px 8px rgba(44, 138, 143, 0.25);
   box-shadow: 0 4px 8px rgba(44, 138, 143, 0.25);
 }
 
 .p-top-dx__fv .c-dx-cta:hover {
   background: #fff !important;
-  color: #2c8a8f;
-  border-color: #2c8a8f;
+  color: #2b858d;
+  border-color: #2b858d;
 }
 
 .p-top-dx__fv .c-dx-cta:hover .c-dx-cta__icon {
-  border-color: #2c8a8f;
+  border-color: #2b858d;
 }
 
 .p-top-dx__fv .c-dx-cta__icon::after {
-  border-top-color: #2c8a8f !important;
-  border-right-color: #2c8a8f !important;
+  border-top-color: #2b858d !important;
+  border-right-color: #2b858d !important;
 }
 
 .p-top-dx__fv .c-dx-cta:hover .c-dx-cta__icon::after {
-  border-top-color: #2c8a8f !important;
-  border-right-color: #2c8a8f !important;
+  border-top-color: #2b858d !important;
+  border-right-color: #2b858d !important;
 }
 
 @media (min-width: 768px) {
@@ -2723,6 +2701,7 @@ button {
     overflow-x: hidden;
   }
 }
+/* FV：フルイド＋最大幅コンテナ（SP 640px・padding 16px） */
 .p-top-dx__fv-inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -2730,8 +2709,12 @@ button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  max-width: 21.875rem;
+  width: 100%;
+  max-width: 640px;
   margin-inline: auto;
+  padding-inline: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -2743,7 +2726,7 @@ button {
     row-gap: clamp(8px, 1vw, 16px);
     padding-left: clamp(0.75rem, 6vw, 107px);
     padding-right: 0;
-    max-width: none;
+    max-width: none; /* PC：フルイド幅に */
     width: 100%;
     min-height: min(
       1100px,
@@ -2899,11 +2882,11 @@ button {
   height: 2.5625rem;
   padding-inline: 1.375rem;
   margin: 0 0 clamp(0.75rem, 1.6vw, 1.25rem);
-  font-size: 1rem;
+  font-size: clamp(16px, 2.6vw, 25px);
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.05em;
-  background: #ff6f61;
+  background: #ed7872;
   border: 1px solid #fff;
   border-radius: 9999px;
 }
@@ -2919,7 +2902,7 @@ button {
 }
 .p-top-dx__fv-title {
   margin-top: 1rem;
-  font-size: clamp(16px, 2.1vw, 36px);
+  font-size: clamp(18px, 4.1vw, 40px);
   font-weight: 700;
   line-height: 1.7;
   letter-spacing: 0.05em;
@@ -2946,7 +2929,7 @@ button {
 }
 .p-top-dx__fv-title-strong {
   display: inline-block;
-  font-size: clamp(36px, 3vw, 58px);
+  font-size: clamp(40px, 9vw, 65px);
   letter-spacing: 0.05em;
   line-height: 1.65;
 }
@@ -2978,11 +2961,18 @@ button {
   }
 }
 .p-top-dx__fv-logo {
-  width: 72vw;
+  width: 85vw;
   max-width: min(319px, 100%);
   min-width: 0;
   height: auto;
   display: block;
+}
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .p-top-dx__fv-logo {
+    width: clamp(350px, 66vw, 520px);
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2992,11 +2982,11 @@ button {
   }
 }
 .p-top-dx__fv-edition {
-  margin: 0 0 0 auto;
-  font-size: clamp(20px, 1.6vw, 31px);
+  font-size: clamp(25px, 1.6vw, 30px);
   font-weight: 500;
   line-height: 3;
   white-space: nowrap;
+  margin-left: auto;
 }
 
 @media (min-width: 768px) {
@@ -3007,7 +2997,7 @@ button {
 
 .p-top-dx__fv-lead {
   margin: 0 0 clamp(1.25rem, 4.2vw, 2.3125rem) 0;
-  font-size: clamp(18px, 1.7vw, 30px);
+  font-size: clamp(18px, 3.5vw, 30px);
   font-weight: 500;
   line-height: 1.7;
   min-width: 0;
@@ -3028,7 +3018,7 @@ button {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #2c8a8f;
+  color: #2b868d;
   text-align: center;
 }
 
@@ -3045,7 +3035,7 @@ button {
   width: clamp(1.5rem, 6.5vw, 3.25rem);
   height: 3px;
   content: "";
-  background: #2c8a8f;
+  background: #2b868d;
   border-radius: 9999px;
   -webkit-transform-origin: center;
   transform-origin: center;
@@ -3078,14 +3068,14 @@ button {
   .p-top-dx__fv-note,
   .p-top-dx__problems-cta-note {
     font-size: clamp(14px, 1.6vw, 25px);
-    color: #2b868d;
+    color: #2b858d;
   }
   .p-top-dx__fv-note::before,
   .p-top-dx__fv-note::after,
   .p-top-dx__problems-cta-note::before,
   .p-top-dx__problems-cta-note::after {
     width: 6.25rem;
-    background: #2b868d;
+    background: #2b858d;
   }
 }
 
@@ -3241,7 +3231,7 @@ button {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  color: #2b868d;
+  color: #2b858d;
 }
 
 @media (min-width: 768px) {
@@ -3254,7 +3244,6 @@ button {
   }
 }
 
-/* SP：Figma 89-340 注釈に斜めライン・色 #2B767E */
 @media (max-width: 767px) {
   .p-top-dx__problems-cta-actions {
     display: -webkit-box;
@@ -3274,7 +3263,7 @@ button {
     padding: 0 2rem;
     font-size: clamp(14px, 3.5vw, 16px);
     font-weight: 500;
-    color: #2b767e;
+    color: #2b868d;
   }
   .p-top-dx__problems-cta-actions-note::before,
   .p-top-dx__problems-cta-actions-note::after {
@@ -3283,7 +3272,7 @@ button {
     width: clamp(1.25rem, 6vw, 2.75rem);
     height: 3px;
     content: "";
-    background: #2b767e;
+    background: #2b868d;
     border-radius: 9999px;
     -webkit-transform-origin: center;
     transform-origin: center;
@@ -3299,14 +3288,13 @@ button {
     translate: 0 -50%;
   }
   .p-top-dx__problems-cta-actions-btn {
-    /* FVボタンと同サイズ（c-dx-cta--lgベース） */
     min-height: 62px;
     padding: clamp(0.75rem, 2vw, 1.125rem) clamp(1.5rem, 4vw, 5.5rem)
       clamp(0.75rem, 2vw, 1.125rem) clamp(1rem, 2.5vw, 2rem);
     font-size: clamp(16px, 1.8vw, 35px);
-    background: #338c8b;
-    -webkit-box-shadow: 0 4px 12px rgba(51, 140, 139, 0.35);
-    box-shadow: 0 4px 12px rgba(51, 140, 139, 0.35);
+    background: #2b858d;
+    -webkit-box-shadow: 0 4px 12px rgba(43, 133, 141, 0.35);
+    box-shadow: 0 4px 12px rgba(43, 133, 141, 0.35);
   }
   .p-top-dx__problems-cta-actions-btn .c-dx-cta__text {
     font-size: clamp(16px, 1.8vw, 35px);
@@ -3336,7 +3324,7 @@ button {
   .p-top-dx__problems-cta-actions-note {
     -webkit-box-ordinal-group: 2;
     order: 2;
-    margin: 1.25rem 0 0;
+    margin: 2.32rem 0 0;
     font-weight: 700;
     color: #2b868d;
     white-space: nowrap;
@@ -3355,14 +3343,13 @@ button {
   justify-content: center;
   width: 100%;
   max-width: clamp(320px, 80vw, 720px);
-  /* FVボタンと同サイズ */
   min-height: clamp(3rem, 8vw, 3.9375rem);
   padding: clamp(0.75rem, 2vw, 1.125rem) clamp(1.5rem, 4vw, 5.5rem)
     clamp(0.75rem, 2vw, 1.125rem) clamp(1rem, 2.5vw, 2rem);
   margin: 0;
   border: none;
   border-radius: 9999px;
-  background: #328e8c;
+  background: #2b858d;
   color: #fff;
   font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(16px, 1.8vw, 35px);
@@ -3372,10 +3359,10 @@ button {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-shadow:
-    0 8px 0 #2d7c7a,
+    0 8px 0 #2b858d,
     0 24px 32px rgba(0, 0, 0, 0.14);
   box-shadow:
-    0 8px 0 #2d7c7a,
+    0 8px 0 #2b858d,
     0 24px 32px rgba(0, 0, 0, 0.14);
 }
 
@@ -3404,8 +3391,8 @@ button {
 
 .p-top-dx__problems-cta-actions-btn:hover {
   background: #fff;
-  color: #328e8c;
-  border: 2px solid #328e8c;
+  color: #2b858d;
+  border: 2px solid #2b858d;
   -webkit-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
@@ -3438,6 +3425,30 @@ button {
     width: 100%;
     display: block;
     vertical-align: top;
+  }
+}
+
+/* FV SP：ロゴ＋医療版のみ調整 */
+@media (max-width: 767px) {
+  .p-top-dx__fv-brand {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .p-top-dx__fv-edition {
+    margin-left: 0;
+    padding-right: 0.5em;
+    font-size: clamp(20px, 5vw, 28px);
+    line-height: 1.4;
+    text-align: right;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
   }
 }
 @media (min-width: 768px) {
@@ -3508,7 +3519,6 @@ button {
     margin-left: 0;
     font-size: clamp(16px, 1.6vw, 22px);
   }
-  /* 改行しないよう列幅に合わせてフォント縮小 */
   @container fv-copy (min-width: 0px) {
     .p-top-dx__fv-copy-top .p-top-dx__fv-title {
       font-size: min(clamp(14px, 1.9vw, 28px), 4.5cqw);
@@ -3605,7 +3615,6 @@ button {
     display: block;
   }
 }
-/* 1920px以上：margin-top負数分の下端余白解消（768pxのimg指定より後で適用） */
 @media (min-width: 1920px) {
   .p-top-dx__fv-media-wrap {
     height: 100%;
@@ -3670,7 +3679,7 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(20px, 2.5vw, 28px);
-  margin: clamp(32px, 4vw, 80px) auto 0;
+  margin: clamp(32px, 4.25vw, 81px) auto 0; /* 4.25vwで最大81pxまで届く（1920pxで81px） */
   padding: 0;
   list-style: none;
   justify-items: center;
@@ -3743,6 +3752,12 @@ button {
   object-fit: contain;
   -o-object-position: center;
   object-position: center;
+  margin-inline: auto;
+  justify-self: center;
+}
+
+.p-top-dx__problem-item:first-child .p-top-dx__problem-icon {
+  transform: translateX(0.4em);
 }
 
 .p-top-dx__problem-text {
@@ -3789,7 +3804,7 @@ button {
 }
 .p-top-dx__problems-message {
   margin: clamp(20px, 3vw, 56px) 0 0;
-  font-size: clamp(1.25rem, 2.4vw, 2.8125rem);
+  font-size: clamp(1.25rem, 4vw, 2.8125rem);
   font-weight: 700;
   line-height: 1.75;
   text-align: center;
@@ -3814,7 +3829,7 @@ button {
   margin-top: -1px;
   padding: clamp(40px, 6vw, 72px) 0;
   background: linear-gradient(165deg, #d4eef2 0%, #e2f4f6 40%, #e8f6f8 100%);
-  background-color: #dceff2;
+  background-color: #eaf7f9;
   overflow: hidden;
   text-align: center;
 }
@@ -3823,18 +3838,16 @@ button {
 .p-top-dx__problems.p-top-dx__problems-cta {
   position: relative;
   overflow: hidden;
-  background-color: #e2f4f6;
+  background-color: #eaf7f9;
   background-image:
     url("../images/bg_img01-sp@2x.webp"),
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #ffffff 15%,
-      #f0fafb 35%,
-      #e2f4f6 100%
-    );
-  background-size: 100% auto, auto;
-  background-position: center 13%, 0 0;
+    linear-gradient(180deg, #ffffff 0%, #ffffff 15%, #f0fafb 35%, #eaf7f9 100%);
+  background-size:
+    100% auto,
+    auto;
+  background-position:
+    center 13%,
+    0 0;
   background-repeat: no-repeat, no-repeat;
 }
 
@@ -3847,27 +3860,35 @@ button {
         #ffffff 0%,
         #ffffff 12%,
         #f0fafb 30%,
-        #e2f4f6 100%
+        #eaf7f9 100%
       );
-    background-position: center 40%, 0 0;
+    background-position:
+      center 40%,
+      0 0;
   }
 }
 
 @media (min-width: 1024px) {
   .p-top-dx__problems.p-top-dx__problems-cta {
-    background-position: center 48%, 0 0;
+    background-position:
+      center 48%,
+      0 0;
   }
 }
 
 @media (min-width: 1440px) {
   .p-top-dx__problems.p-top-dx__problems-cta {
-    background-position: center 53%, 0 0;
+    background-position:
+      center 53%,
+      0 0;
   }
 }
 
 @media (min-width: 1920px) {
   .p-top-dx__problems.p-top-dx__problems-cta {
-    background-position: center 48%, 0 0;
+    background-position:
+      center 48%,
+      0 0;
   }
 }
 
@@ -3950,10 +3971,8 @@ button {
   -webkit-clip-path: none;
   clip-path: none;
   border-radius: 16px 16px 0 0;
-  background: #ef8077;
+  background: #ed7872;
   color: #fff;
-  -webkit-box-shadow: 0 2px 8px rgba(244, 138, 133, 0.35);
-  box-shadow: 0 2px 8px rgba(244, 138, 133, 0.35);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3982,7 +4001,7 @@ button {
     -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
     clip-path: polygon(0 0, 100% 0, 0 100%);
     border-radius: clamp(12px, 2vw, 24px) 0 0 0;
-    background: #f48a85;
+    background: #ed7872;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
@@ -4007,10 +4026,6 @@ button {
   display: none;
 }
 
-.p-top-dx__problems-ribbon-line1::after {
-  content: " ";
-}
-
 .p-top-dx__problems-ribbon-line1,
 .p-top-dx__problems-ribbon-line2 {
   display: inline;
@@ -4033,9 +4048,6 @@ button {
 .p-top-dx__problems-ribbon-line1,
 .p-top-dx__problems-ribbon-line2 {
   white-space: nowrap;
-}
-
-.p-top-dx__problems-ribbon-line1 {
   font-size: 1.5rem;
 }
 
@@ -4045,7 +4057,7 @@ button {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #0097a7;
+  color: #2b858d;
   min-width: 0;
   overflow-wrap: break-word;
 }
@@ -4079,8 +4091,8 @@ button {
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   text-align: center;
   margin-bottom: clamp(32px, 3.5vw, 48px);
   white-space: normal;
@@ -4092,10 +4104,11 @@ button {
   .p-top-dx__problems-cta-brandline {
     display: block;
     white-space: nowrap;
+    -webkit-box-align: center;
+    align-items: center;
   }
 }
 
-/* 画面狭いとき：ブランドラインを折り返してはみ出し防止 */
 @media (min-width: 768px) and (max-width: 1000px) {
   .p-top-dx__problems-cta-brandline {
     white-space: normal;
@@ -4116,7 +4129,7 @@ button {
   margin-right: 0;
   padding-right: 0;
   margin-bottom: 12px;
-  font-size: clamp(14px, 1.6vw, 24px);
+  font-size: clamp(20px, 5vw, 35px);
   font-weight: 700;
   color: #000;
 }
@@ -4173,7 +4186,7 @@ button {
 .p-top-dx__problems-brand-edition {
   margin: 0;
   padding: 0;
-  font-size: inherit;
+  font-size: clamp(25px, 5vw, 30px);
   font-weight: 500;
   line-height: 1.5;
   color: #000;
@@ -4189,7 +4202,7 @@ button {
 .p-top-dx__problems-brand .p-top-dx__problems-cta-brandline-text {
   margin: 0;
   padding: 0;
-  font-size: inherit;
+  font-size: clamp(20px, 5vw, 35px);
   font-weight: 700;
   line-height: 1.5;
   color: #000;
@@ -4209,12 +4222,11 @@ button {
   max-width: none;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  background: #3c8f99;
-  -webkit-box-shadow: 0 6px 10px rgba(60, 143, 153, 0.35);
-  box-shadow: 0 6px 10px rgba(60, 143, 153, 0.35);
+  background: #2b858d;
+  -webkit-box-shadow: 0 6px 10px rgba(43, 133, 141, 0.35);
+  box-shadow: 0 6px 10px rgba(43, 133, 141, 0.35);
 }
 
-/* カードのpaddingからはみ出しOK：CTAを左右いっぱいに */
 .p-top-dx__problems-cta .p-top-dx__problems-cta-actions {
   margin-inline: -24px;
   width: calc(100% + 48px);
@@ -4246,67 +4258,67 @@ button {
 
 .p-top-dx__problems-cta .p-top-dx__problems-cta-actions-btn:hover {
   background: #fff;
-  color: #328e8c;
-  border: 2px solid #328e8c;
+  color: #2b858d;
+  border: 2px solid #2b858d;
   -webkit-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .p-top-dx__problems-cta .c-dx-cta:hover {
   background: #fff !important;
-  color: #3c8f99;
-  border-color: #3c8f99;
+  color: #2b858d;
+  border-color: #2b858d;
 }
 
 .p-top-dx__problems-cta .c-dx-cta:hover .c-dx-cta__icon {
-  border-color: #3c8f99;
+  border-color: #2b858d;
 }
 
 .p-top-dx__problems-cta .c-dx-cta__icon::after {
-  border-top-color: #3c8f99;
-  border-right-color: #3c8f99;
+  border-top-color: #2b858d;
+  border-right-color: #2b858d;
 }
 
 .p-top-dx__problems-cta .c-dx-cta:hover .c-dx-cta__icon::after {
-  border-top-color: #3c8f99;
-  border-right-color: #3c8f99;
+  border-top-color: #2b858d;
+  border-right-color: #2b858d;
 }
 
 @media (min-width: 768px) {
   .p-top-dx__problems-cta .c-dx-cta {
     margin-top: 0;
-    background: #38979f;
-    -webkit-box-shadow: 0 6px 10px rgba(56, 151, 159, 0.35);
-    box-shadow: 0 6px 10px rgba(56, 151, 159, 0.35);
+    background: #2b858d;
+    -webkit-box-shadow: 0 6px 10px rgba(43, 133, 141, 0.35);
+    box-shadow: 0 6px 10px rgba(43, 133, 141, 0.35);
   }
   .p-top-dx__problems-cta .p-top-dx__problems-cta-actions-btn {
-    background: #328e8c;
+    background: #2b858d;
     -webkit-box-shadow:
-      0 8px 0 #2d7c7a,
+      0 8px 0 #2b858d,
       0 24px 32px rgba(0, 0, 0, 0.14);
     box-shadow:
-      0 8px 0 #2d7c7a,
+      0 8px 0 #2b858d,
       0 24px 32px rgba(0, 0, 0, 0.14);
   }
   .p-top-dx__problems-cta .c-dx-cta:hover {
-    color: #38979f;
-    border-color: #38979f;
+    color: #2b858d;
+    border-color: #2b858d;
   }
   .p-top-dx__problems-cta .p-top-dx__problems-cta-actions-btn:hover {
     background: #fff;
-    color: #328e8c;
-    border-color: #328e8c;
+    color: #2b858d;
+    border-color: #2b858d;
   }
   .p-top-dx__problems-cta .c-dx-cta:hover .c-dx-cta__icon {
-    border-color: #38979f;
+    border-color: #2b858d;
   }
   .p-top-dx__problems-cta .c-dx-cta__icon::after {
-    border-top-color: #38979f;
-    border-right-color: #38979f;
+    border-top-color: #2b858d;
+    border-right-color: #2b858d;
   }
   .p-top-dx__problems-cta .c-dx-cta:hover .c-dx-cta__icon::after {
-    border-top-color: #38979f;
-    border-right-color: #38979f;
+    border-top-color: #2b858d;
+    border-right-color: #2b858d;
   }
 }
 .p-top-dx__problems-cta-note-accent::before,
@@ -4322,7 +4334,7 @@ button {
 /* ===== Features ===== */
 .p-top-dx__features {
   padding-block: clamp(56px, 7vw, 120px);
-  background: #e0f4f8;
+  background: #eaf7f9;
   max-width: 100%;
   overflow-x: hidden;
   -webkit-box-sizing: border-box;
@@ -4351,16 +4363,16 @@ button {
 
 @media (min-width: 768px) {
   .p-top-dx__features {
-    background: #e0f4f8;
+    background: #eaf7f9;
   }
   .p-top-dx__features .p-top-dx__container {
     width: min(1706px, calc(100% - 10vw));
-    max-width: 1706px; /* 1610 + 2 * 48 (padding) */
+    max-width: 1706px;
     margin-inline: auto;
     padding-inline: clamp(1rem, 3vw, 3rem);
   }
 }
-/* Figma 2183-58：「よりそいDX 医療版」の特長セクション */
+
 .p-top-dx__features .p-top-dx__section-title {
   margin: 0;
   font-size: clamp(25px, 6cqw, 45px);
@@ -4373,9 +4385,9 @@ button {
 
 @media (min-width: 768px) {
   .p-top-dx__features .p-top-dx__section-title {
-    font-size: clamp(24px, 2.2cqw, 32px);
+    font-size: clamp(24px, 6cqw, 45px);
     text-align: center;
-    margin: 0 0 40px;
+    margin: 0 0 clamp(20px, 6cqw, 53px); /* 6cqwで最大53pxまで届く（コンテナ～1550pxで53px） */
   }
 }
 
@@ -4384,7 +4396,7 @@ button {
   font-size: clamp(18px, 4cqw, 24px);
   font-weight: 700;
   line-height: 1.5;
-  color: #2b9c89;
+  color: #2b858d;
   text-align: center;
   letter-spacing: 0.04em;
   text-wrap: balance;
@@ -4397,7 +4409,6 @@ button {
   }
 }
 
-/* 導入ブロック：Figma 2183-58 タイトル → 左円形画像 | 中央テキスト | 右円形画像 */
 .p-top-dx__feature-intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4424,7 +4435,6 @@ button {
   word-wrap: break-word;
 }
 
-/* SP: 後続の clamp に負けないようここで 25px を上書き */
 @media screen and (max-width: 768px) {
   .p-top-dx__feature-intro-title,
   .p-top-dx__section-title,
@@ -4432,7 +4442,7 @@ button {
   .p-top-dx__cases .p-top-dx__section-title,
   .p-top-dx__plan .p-top-dx__section-title,
   .p-top-dx__company .p-top-dx__section-title {
-    font-size: 25px;
+    font-size: clamp(25px, 6cqw, 45px);
   }
 }
 
@@ -4453,18 +4463,17 @@ button {
   grid-column: 1;
   grid-row: 1;
   justify-self: center;
-  width: clamp(100px, 38cqw, 142px);
+  width: clamp(100px, 42cqw, 142px);
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
 
-/* SP: 右の円形写真を少し下にずらす */
 .p-top-dx__feature-intro-photo--right {
   grid-column: 2;
   grid-row: 1;
   justify-self: center;
-  width: clamp(100px, 38cqw, 142px);
+  width: clamp(100px, 42cqw, 142px);
   height: auto;
   max-width: 100%;
   min-width: 0;
@@ -4473,16 +4482,15 @@ button {
   transform: translateY(2.5rem);
 }
 
-/* SP: テキストだけ下にずらす */
 .p-top-dx__feature-intro-center {
   grid-column: 1 / -1;
   grid-row: 2;
   min-width: 0;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .p-top-dx__feature-intro .p-top-dx__section-lead {
-  color: #2b9c89;
+  color: #2b858d;
   text-align: center;
   margin: 0;
   font-size: clamp(25px, 3cqw, 40px);
@@ -4492,14 +4500,14 @@ button {
 }
 
 .p-top-dx__feature-intro-text {
-  text-align: center;
+  text-align: justify;
   margin: 12px 0 0;
-  font-size: clamp(13px, 3.5cqw, 16px);
+  font-size: clamp(18px, 4cqw, 25px);
   line-height: 1.8;
   color: #000;
   font-weight: 400;
   min-width: 0;
-  text-wrap: balance;
+  /* text-wrap: balance; */
 }
 
 @media (min-width: 768px) {
@@ -4543,24 +4551,28 @@ button {
   .p-top-dx__feature-intro-photo--left {
     grid-column: unset;
     grid-row: unset;
-    width: clamp(160px, 22cqw, 276px);
+    width: clamp(180px, 12vw, 276px);
+    min-width: clamp(180px, 12vw, 276px);
     height: auto;
     -ms-flex-item-align: start;
     align-self: flex-start;
     margin-top: -48px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
   }
   .p-top-dx__feature-intro-center {
     grid-column: unset;
     grid-row: unset;
     margin-top: 0;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
     min-width: 0;
   }
   .p-top-dx__feature-intro-row .p-top-dx__feature-intro-photo--right {
     grid-column: unset;
     grid-row: unset;
-    width: clamp(160px, 22cqw, 276px);
+    width: clamp(180px, 12vw, 276px);
+    min-width: clamp(180px, 12vw, 276px);
     height: auto;
     -ms-flex-item-align: start;
     align-self: flex-start;
@@ -4568,9 +4580,11 @@ button {
     -webkit-transform: translateY(5.5rem);
     -ms-transform: translateY(5.5rem);
     transform: translateY(5.5rem);
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
   }
   .p-top-dx__feature-intro .p-top-dx__section-lead {
-    color: #2b9c89;
+    color: #2b858d;
     text-align: center;
     line-height: 1.5;
     white-space: nowrap;
@@ -4625,6 +4639,13 @@ button {
     width: clamp(160px, 22cqw, 276px);
     height: auto;
   }
+  .p-top-dx__feature-intro-row .p-top-dx__feature-intro-photo--left,
+  .p-top-dx__feature-intro-row .p-top-dx__feature-intro-photo--right {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: clamp(180px, 12vw, 276px);
+    min-width: clamp(180px, 12vw, 276px);
+  }
 }
 
 .p-top-dx__feature-intro-text {
@@ -4636,12 +4657,10 @@ button {
   text-wrap: balance;
 }
 
-/* マーケターなど、棒（ー）の前後で改行させない */
 .p-top-dx__nowrap {
   white-space: nowrap;
 }
 
-/* POINT一覧（SP：縦1列・イラスト上 / PC：横並び） */
 .p-top-dx__feature-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -4661,8 +4680,8 @@ button {
   .p-top-dx__feature-item {
     min-width: 0;
     width: 100%;
-    max-width: 343px;
-    margin-inline: auto;
+    max-width: none;
+    margin-inline: 0;
     padding: 20px 16px;
   }
   .p-top-dx__feature-visual {
@@ -4680,11 +4699,7 @@ button {
   .p-top-dx__feature-list {
     gap: clamp(48px, 6.5cqw, 80px);
     margin: clamp(48px, 6.5cqw, 80px) 0 0;
-    padding-inline: clamp(
-      1rem,
-      4cqw,
-      9.25rem
-    ); /* 狭い幅ではパディングを詰めてテキストが切れないように */
+    padding-inline: clamp(1rem, 4cqw, 9.25rem);
   }
 }
 .p-top-dx__feature-item {
@@ -4718,15 +4733,28 @@ button {
   -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
   order: -1;
-  width: clamp(140px, 65cqw, 220px);
+  width: clamp(140px, 49cqw, 220px);
   max-width: 100%;
   height: auto;
   aspect-ratio: 1;
   margin-inline: auto;
-  margin-bottom: 16px;
   min-width: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .p-top-dx__feature-header {
@@ -4753,7 +4781,7 @@ button {
 }
 
 .p-top-dx__feature-title {
-  background: #e8e8e8;
+  background: #d9d9d9;
   padding: 14px 16px;
   font-size: clamp(25px, 4.2cqw, 32px);
   width: 100%;
@@ -4771,23 +4799,23 @@ button {
   font-weight: 400;
   word-break: normal;
   overflow-wrap: break-word;
-  line-break: loose; /* 句読点の後で改行 */
+  line-break: loose;
   min-width: 0;
 }
 
 .p-top-dx__features .p-top-dx__feature-accent {
-  color: #0097a7;
+  color: #2b858d;
   font-size: clamp(25px, 4cqw, 32px);
 }
 
 .p-top-dx__feature-accent--red {
-  background: #ef8077;
+  background: #ed7872;
   color: #fff;
   padding: 2px 8px;
   font-size: clamp(30px, 4cqw, 48px);
   margin-inline: 2px;
   border-radius: 4px;
-  white-space: nowrap; /* 赤背景内で改行しない */
+  white-space: nowrap;
 }
 
 .p-top-dx__feature-note {
@@ -4860,7 +4888,7 @@ button {
     font-size: clamp(40px, 4.5cqw, 4rem);
   }
   .p-top-dx__feature-title {
-    background: #e8e8e8;
+    background: #d9d9d9;
     padding: clamp(0.75rem, 1.5cqw, 1.25rem) clamp(1rem, 2cqw, 1.5rem);
     font-size: clamp(1.25rem, 2.5cqw, 2rem);
     width: auto;
@@ -4875,10 +4903,10 @@ button {
     line-break: loose;
   }
   .p-top-dx__features .p-top-dx__feature-accent {
-    color: #00a0a0;
+    color: #2b858d;
   }
   .p-top-dx__feature-accent--red {
-    background: #e86b6f;
+    background: #ed7872;
     color: #fff;
     padding: 0.25rem 0.5rem;
     margin-inline: 0.3125rem;
@@ -4887,7 +4915,7 @@ button {
   .p-top-dx__feature-note {
     margin-top: clamp(0.75rem, 1.5cqw, 1.125rem);
     font-size: clamp(1rem, 2.5cqw, 1.375rem);
-    color: #555;
+    color: #1a1a1a;
   }
 }
 @media (min-width: 768px) {
@@ -4905,22 +4933,6 @@ button {
     grid-template-columns: minmax(0, 1fr) minmax(180px, min(380px, 28vw));
   }
 }
-.p-top-dx__feature-visual {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #fff;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
 
 .p-top-dx__feature-illust {
   width: 100%;
@@ -4936,7 +4948,6 @@ button {
   min-width: 0;
 }
 
-/* POINT 01/02/03 と見出し */
 .p-top-dx__feature-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4958,7 +4969,7 @@ button {
 .p-top-dx__feature-no {
   margin: 0;
   font-weight: 700;
-  color: #333;
+  color: #1a1a1a;
   letter-spacing: 0.06em;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -4973,7 +4984,7 @@ button {
   margin: 0;
   font-weight: 700;
   line-height: 1.5;
-  color: #333;
+  color: #1a1a1a;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -4983,7 +4994,7 @@ button {
 
 .p-top-dx__feature-desc {
   margin: 0;
-  color: #333;
+  color: #1a1a1a;
   font-weight: 700;
 }
 
@@ -5045,7 +5056,7 @@ button {
 
 @media screen and (min-width: 768px) {
   .p-top-dx__cases .p-top-dx__section-title {
-    margin: 0 0 clamp(20px, 2.8cqw, 32px);
+    margin: 0 0 clamp(20px, 6cqw, 93px); /* 6cqwで最大93pxまで届く（コンテナ～1550pxで93px） */
   }
   .p-top-dx__case-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -5055,7 +5066,7 @@ button {
     padding-inline: 0.55rem;
   }
 }
-/* SP: Figma 89-498 横型カード（画像左・テキスト右・角丸・ティールバッジ） */
+
 .p-top-dx__case-card {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 画像とテキスト 半分ずつ */
@@ -5140,7 +5151,7 @@ button {
   height: auto;
   padding: 5px 10px;
   margin: 0 0 10px;
-  font-size: clamp(11px, 3cqw, 13px);
+  font-size: clamp(16px, 3cqw, 25px);
   font-weight: 700;
   color: #fff;
   background: #2b858d;
@@ -5150,7 +5161,6 @@ button {
 @media (max-width: 767px) {
   .p-top-dx__case-tag {
     padding: 4px 8px;
-    font-size: 11px;
     letter-spacing: -0.02em;
     max-width: 72px;
     -webkit-box-sizing: border-box;
@@ -5172,7 +5182,7 @@ button {
 }
 .p-top-dx__case-title {
   margin: 0;
-  font-size: clamp(14px, 3.5cqw, 16px);
+  font-size: clamp(18px, 3.5cqw, 25px);
   font-weight: 700;
   line-height: 1.45;
   letter-spacing: 0.02em;
@@ -5190,7 +5200,8 @@ button {
 }
 /* ===== Plan（SP：中央揃え・テーブル横スクロール / PC：通常） ===== */
 .p-top-dx__plan {
-  padding-block: clamp(56px, 7vw, 140px);
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 9vw, 167px);
   background: #eaf7f9;
 }
 
@@ -5284,7 +5295,7 @@ button {
   }
   .p-top-dx__plan-box {
     padding: clamp(40px, 3.5cqw, 90px);
-    margin-top: 2rem;
+    margin-top: clamp(2rem, 4.1vw, 77px);
   }
   .p-top-dx__plan-brand {
     margin-bottom: 1.625rem;
@@ -5322,13 +5333,13 @@ button {
   line-height: 1.5;
   text-align: center;
   border: none;
-  border-right: 2px solid #2b858d;
-  border-bottom: 2px solid #2b858d;
+  border-right: 2px solid #319ca4;
+  border-bottom: 2px solid #319ca4;
 }
 
 .p-top-dx__plan-table thead th {
-  border-top: 2px solid #2b858d;
-  border-bottom: 2px solid #2b858d;
+  border-top: 2px solid #319ca4;
+  border-bottom: 2px solid #319ca4;
 }
 
 .p-top-dx__plan-table td {
@@ -5376,7 +5387,7 @@ button {
   }
   .p-top-dx__plan-table thead th {
     border-top-width: 3px;
-    border-bottom: 3px solid #2b858d;
+    border-bottom: 3px solid #319ca4;
   }
   .p-top-dx__plan-table td {
     padding-block: 1.5625rem;
@@ -5394,7 +5405,7 @@ button {
     font-size: 1.125rem;
   }
 }
-/* テーブル左右の外枠線なし */
+
 .p-top-dx__plan-table th:last-child,
 .p-top-dx__plan-table td:last-child {
   border-right: none;
@@ -5442,7 +5453,8 @@ button {
 
 /* ===== Flow ===== */
 .p-top-dx__flow {
-  padding-block: clamp(56px, 7vw, 140px);
+  padding-top: clamp(56px, 9vw, 147px);
+  padding-bottom: clamp(56px, 9vw, 171px);
   background: #fff;
   overflow-x: clip;
 }
@@ -5481,7 +5493,7 @@ button {
   -ms-flex-align: center;
   align-items: center;
   padding: 0;
-  margin: 2.5rem 0 0;
+  margin: 4rem 0 0;
   list-style: none;
 }
 
@@ -5507,7 +5519,7 @@ button {
   width: 0;
   height: 0;
   content: "";
-  border-top: 5.1875rem solid #2b858d;
+  border-top: 5.1875rem solid #319ca4;
   border-right: 3.21875rem solid transparent;
   border-left: 3.21875rem solid transparent;
   -webkit-transform: translateX(-50%);
@@ -5556,7 +5568,8 @@ button {
 /* ===== CTA section（Figma 65:121） ===== */
 .p-top-dx__cta {
   position: relative;
-  padding-block: clamp(56px, 7vw, 140px);
+  padding-top: clamp(56px, 9vw, 112px);
+  padding-bottom: clamp(56px, 9vw, 149px);
   background: #fff;
   overflow-x: clip;
 }
@@ -5598,7 +5611,7 @@ button {
 }
 
 .p-top-dx__cta-actions {
-  margin-top: clamp(20px, 2.5vw, 32px);
+  margin-top: clamp(20px, 6cqw, 76px);
 }
 
 .p-top-dx__cta .p-top-dx__cta-actions .c-dx-cta,
@@ -5629,14 +5642,14 @@ button {
   .p-top-dx__bottom-cta .p-top-dx__cta-actions .p-top-dx__cta-note {
     -webkit-box-ordinal-group: 2;
     order: 2;
-    margin-top: 0.75rem;
+    margin-top: 2.32rem;
   }
 }
 
 .p-top-dx__cta .c-dx-cta,
 .p-top-dx__bottom-cta .c-dx-cta {
   margin-top: clamp(20px, 2.5vw, 32px);
-  background: #38979f !important;
+  background: #2b858d !important;
   -webkit-box-shadow: 0 6px 10px rgba(56, 151, 159, 0.35);
   box-shadow: 0 6px 10px rgba(56, 151, 159, 0.35);
 }
@@ -5644,25 +5657,25 @@ button {
 .p-top-dx__cta .c-dx-cta:hover,
 .p-top-dx__bottom-cta .c-dx-cta:hover {
   background: #fff !important;
-  color: #38979f;
-  border-color: #38979f;
+  color: #2b858d;
+  border-color: #2b858d;
 }
 
 .p-top-dx__cta .c-dx-cta:hover .c-dx-cta__icon,
 .p-top-dx__bottom-cta .c-dx-cta:hover .c-dx-cta__icon {
-  border-color: #38979f;
+  border-color: #2b858d;
 }
 
 .p-top-dx__cta .c-dx-cta__icon::after,
 .p-top-dx__bottom-cta .c-dx-cta__icon::after {
-  border-top-color: #38979f !important;
-  border-right-color: #38979f !important;
+  border-top-color: #2b858d !important;
+  border-right-color: #2b858d !important;
 }
 
 .p-top-dx__cta .c-dx-cta:hover .c-dx-cta__icon::after,
 .p-top-dx__bottom-cta .c-dx-cta:hover .c-dx-cta__icon::after {
-  border-top-color: #38979f !important;
-  border-right-color: #38979f !important;
+  border-top-color: #2b858d !important;
+  border-right-color: #2b858d !important;
 }
 
 .p-top-dx__cta-accent {
@@ -5683,7 +5696,7 @@ button {
   margin: 0.75rem 0 0;
   font-size: clamp(0.875rem, 1.4vw, 1.25rem);
   font-weight: 700;
-  color: #38979f;
+  color: #2b858d;
   text-align: center;
 }
 
@@ -5707,7 +5720,6 @@ button {
   }
 }
 
-/* SP：CTA を problems-cta-actions と同じレイアウト（注釈＋斜めライン、ボタンサイズ） */
 @media screen and (max-width: 767px) {
   .p-top-dx__cta .p-top-dx__cta-actions,
   .p-top-dx__bottom-cta .p-top-dx__cta-actions {
@@ -5733,7 +5745,7 @@ button {
     padding: 0 2rem;
     font-size: clamp(14px, 3.5vw, 16px);
     font-weight: 500;
-    color: #2b767e;
+    color: #2b858d;
   }
   .p-top-dx__cta .p-top-dx__cta-actions .p-top-dx__cta-note::before,
   .p-top-dx__cta .p-top-dx__cta-actions .p-top-dx__cta-note::after,
@@ -5744,7 +5756,7 @@ button {
     width: clamp(1.25rem, 6vw, 2.75rem);
     height: 3px;
     content: "";
-    background: #2b767e;
+    background: #2b858d;
     border-radius: 9999px;
     -webkit-transform-origin: center;
     transform-origin: center;
@@ -5848,8 +5860,7 @@ button {
   grid-auto-rows: auto;
   gap: clamp(0.75rem, 1.5vw, 1.25rem);
   padding: clamp(0.75rem, 1.5vw, 1.25rem);
-  background: #e0f4f8;
-  border-radius: 1rem;
+  background: #e7f2ff;
   -ms-flex-line-pack: start;
   align-content: start;
   max-width: 100%;
@@ -5945,7 +5956,7 @@ button {
 
 .p-top-dx__cta-step-text {
   margin: 0;
-  font-size: clamp(0.875rem, 1.8vw, 1.25rem);
+  font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 700;
   line-height: 1.5;
   color: #000;
@@ -6054,7 +6065,7 @@ button {
 
 .p-top-dx__cta-message-lead {
   margin: 0;
-  font-size: clamp(20px, 2vw, 35px);
+  font-size: clamp(20px, 3vw, 35px);
   white-space: normal;
   font-weight: 700;
   line-height: 1.6;
@@ -6093,7 +6104,7 @@ button {
   -ms-flex-align: center;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
+  padding: 12px 10px;
   padding-bottom: max(12px, env(safe-area-inset-bottom));
   background: transparent;
   -webkit-box-sizing: border-box;
@@ -6107,17 +6118,18 @@ button {
   min-width: 0;
   margin-top: 0;
   min-height: 52px;
-  padding: 12px 16px 12px 20px;
+  padding: 12px 50px 12px 26px;
+  margin-left: 6px;
 }
 
 .p-top-dx__fixed-bar .c-dx-cta--fixed .c-dx-cta__icon {
-  right: 12px;
-  width: 32px;
-  height: 32px;
+  right: 25px;
+  width: 17px;
+  height: 17px;
 }
 
 .p-top-dx__fixed-bar .c-dx-cta--fixed .c-dx-cta__text {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .p-top-dx__fixed-bar .p-top-dx__to-top {
@@ -6215,8 +6227,9 @@ button {
 
 /* ===== Company（Figma 89-839 SP） ===== */
 .p-top-dx__company {
-  padding-block: clamp(56px, 7vw, 140px);
   background: #fff;
+  padding-top: clamp(56px, 9vw, 93px);
+  padding-bottom: clamp(56px, 9vw, 147px);
 }
 
 .p-top-dx__company .p-top-dx__container {
@@ -6242,15 +6255,15 @@ button {
 
 .p-top-dx__company-dl {
   width: min(1242px, 100%);
-  margin: 2.5rem auto 0;
-  border-top: 2px solid #2b858d;
+  margin: 4.75rem auto 0;
+  border-top: 3px solid #319ca4;
 }
 
 .p-top-dx__company-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  border-bottom: 2px solid #2b858d;
+  border-bottom: 3px solid #319ca4;
 }
 
 .p-top-dx__company-row dt {
@@ -6264,7 +6277,7 @@ button {
   font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.6;
-  border-bottom: 2px solid #2b858d;
+  border-bottom: 3px solid #319ca4;
 }
 
 .p-top-dx__company-row dd {
@@ -6297,14 +6310,14 @@ button {
     -ms-flex-align: center;
     align-items: center;
     padding: 0.875rem 1.75rem;
-    border-left: 2px solid #2b858d;
+    border-left: 3px solid #319ca4;
   }
 }
 /* ===== Staff ===== */
 .p-top-dx__staff {
   position: relative;
   z-index: 2; /* staff-summary が下の bottom-cta にはみ出るため、前面に表示 */
-  padding-block: clamp(56px, 7vw, 140px);
+  padding-top: clamp(56px, 7vw, 82px);
   padding-bottom: clamp(56px, 7vw, 140px);
   background: #eaf7f9;
   overflow: visible;
@@ -6321,7 +6334,7 @@ button {
 .p-top-dx__staff-people {
   display: grid;
   gap: clamp(28px, 6vw, 72px);
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   max-width: 1424px;
   margin-inline: auto;
 }
@@ -6599,14 +6612,14 @@ button {
 
 .p-top-dx__bottom-cta .c-dx-cta {
   margin-top: clamp(20px, 2.5vw, 32px);
-  background: #38979f !important;
-  -webkit-box-shadow: 0 6px 10px rgba(56, 151, 159, 0.35);
-  box-shadow: 0 6px 10px rgba(56, 151, 159, 0.35);
+  background: #2b858d !important;
+  -webkit-box-shadow: 0 6px 10px rgba(43, 133, 141, 0.35);
+  box-shadow: 0 6px 10px rgba(43, 133, 141, 0.35);
 }
 
 .p-top-dx__bottom-cta .c-dx-cta__icon::after {
-  border-top-color: #38979f !important;
-  border-right-color: #38979f !important;
+  border-top-color: #2b858d !important;
+  border-right-color: #2b858d !important;
 }
 
 .p-top-dx__bottom-cta-note {
@@ -6721,13 +6734,7 @@ button {
     width: 100%;
     padding-inline: 16px;
   }
-  /* FV：コンテンツのみ640pxに制限（背景はセクションで全幅） */
-  .p-top-dx__fv-inner {
-    max-width: 640px;
-    margin-inline: auto;
-    width: 100%;
-    padding-inline: 16px;
-  }
+  /* FV：baseで640px・padding16pxを指定済み、fv-mediaは100vwでフルイド */
 }
 
 /* SPコンテンツ幅：containerに合わせて640px・padding 16px */
@@ -6746,10 +6753,7 @@ button {
     max-width: 640px !important;
     padding-inline: 16px !important;
   }
-  /* casesのみ375pxで綺麗に・case-gridを幅いっぱいに伸ばす */
-  .p-top-dx__cases .p-top-dx__container {
-    max-width: 375px !important;
-  }
+
   .p-top-dx__plan-table-wrap {
     margin-inline: -16px !important;
     padding-inline: 16px !important;

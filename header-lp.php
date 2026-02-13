@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Gotu&display=swap" />
   </noscript>
   <?php if ( is_front_page() ) : ?>
-    <base href="<?php echo esc_url( trailingslashit( get_template_directory_uri() ) ); ?>">
+  <base href="<?php echo esc_url( trailingslashit( get_template_directory_uri() ) ); ?>">
   <?php endif; ?>
   <?php wp_head(); ?>
 </head>
@@ -37,7 +37,7 @@
     <div class="p-header__inner">
       <div class="p-header__left">
         <?php if ( is_front_page() ) : ?>
-          <h1 class="p-header__logo">
+        <h1 class="p-header__logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="よりそいDX 医療版">
               <?php if ( file_exists( $header_logo_path ) ) : ?>
                 <img src="<?php echo esc_url( $header_logo_url ); ?>" width="218" height="51" alt="よりそいDX" />
@@ -47,7 +47,7 @@
             </a>
           </h1>
         <?php else : ?>
-          <p class="p-header__logo">
+        <p class="p-header__logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="よりそいDX 医療版">
               <?php if ( file_exists( $header_logo_path ) ) : ?>
                 <img src="<?php echo esc_url( $header_logo_url ); ?>" width="218" height="51" alt="よりそいDX" />
@@ -61,7 +61,7 @@
       </div>
 
       <div class="p-header__right">
-        <a class="p-header__cta" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">まずは気軽に無料相談</a>
+        <a class="p-header__cta" href="https://timerex.net/s/maimai.maiko.matsue_106c/dd00f206">まずは気軽に無料相談</a>
 
         <button class="p-header__hamburger js-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer-menu">
           <span></span>
@@ -96,7 +96,7 @@
 
       <div class="p-header__drawer-cta-area">
         <p class="p-header__drawer-note"><span class="u-mobile">初回は忙しい先生でも安心の<br>オンライン商談！</span><span class="u-desktop">初回は忙しい先生でも安心のオンライン商談。まずは気軽にご相談ください！</span></p>
-        <a class="p-header__drawer-cta" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+        <a class="p-header__drawer-cta" href="https://timerex.net/s/maimai.maiko.matsue_106c/dd00f206">
           <span class="p-header__drawer-cta-text">まずは気軽に無料相談</span>
           <span class="p-header__drawer-cta-icon" aria-hidden="true"></span>
         </a>

@@ -7,7 +7,7 @@ $theme_uri = get_template_directory_uri();
 ?>
 
 <main class="p-top-dx">
-  <section class="p-top-dx__fv " id="top">
+  <section class="p-top-dx__fv" id="top">
     <div class="p-top-dx__fv-inner">
       <div class="p-top-dx__fv-copy p-top-dx__fv-copy-top">
         <p class="p-top-dx__badge">頼れる院内エンジニア！</p>
@@ -37,9 +37,9 @@ $theme_uri = get_template_directory_uri();
             </p>
 
         <div class="p-top-dx__fv-actions">
-          <p class="p-top-dx__fv-note">初回は忙しい先生でも<br class="u-mobile">安心のオンライン商談！
+          <p class="p-top-dx__fv-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談！
             <span class="u-desktop"><br />まずは気軽にご相談ください！</span></p>
-          <a class="c-dx-cta c-dx-cta--lg" href="/contact/">
+          <a class="c-dx-cta c-dx-cta--lg" href="https://timerex.net/s/maimai.maiko.matsue_106c/dd00f206">
             <span class="c-dx-cta__text">まずは気軽に無料相談</span>
             <span class="c-dx-cta__icon" aria-hidden="true"></span>
           </a>
@@ -113,7 +113,7 @@ $theme_uri = get_template_directory_uri();
 
           <div class="p-top-dx__problems-cta-actions">
             <p class="p-top-dx__problems-cta-actions-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談！<span class="u-desktop">まずは気軽にご相談ください！</span></p>
-            <a class="p-top-dx__problems-cta-actions-btn c-dx-cta c-dx-cta--lg" href="/contact/">
+            <a class="p-top-dx__problems-cta-actions-btn c-dx-cta c-dx-cta--lg" href="https://timerex.net/s/maimai.maiko.matsue_106c/dd00f206">
               <span class="c-dx-cta__text">まずは気軽に無料相談</span>
               <span class="c-dx-cta__icon" aria-hidden="true"></span>
             </a>
@@ -133,11 +133,11 @@ $theme_uri = get_template_directory_uri();
           </div>
           <div class="p-top-dx__feature-intro-center">
             <p class="p-top-dx__section-lead">
-            医療現場に“寄り添う”<br class="u-mobile u-tablet">DX化サポート。<br />
-            専任のITエンジニアが、<br class="u-mobile u-tablet">医師の右腕になります。
+            医療現場に“寄り添う”DX化サポート。<br />
+            専任のITエンジニアが、医師の右腕になります。
             </p>
             <p class="p-top-dx__section-sub p-top-dx__feature-intro-text">
-            現役のシステムエンジニアや<span class="p-top-dx__nowrap">Webマーケター</span>が、月1回の定期ミーティングを通じて<br />
+            現役のシステムエンジニアやWebマーケターが、月1回の定期ミーティングを通じて
             院内のIT課題を整理し、最適なIT・DX施策を一緒に考えます。
             </p>
           </div>
@@ -155,7 +155,7 @@ $theme_uri = get_template_directory_uri();
           <div class="p-top-dx__feature-body">
             <div class="p-top-dx__feature-header">
               <p class="p-top-dx__feature-no">POINT <span class="p-top-dx__feature-no-num">01</span></p>
-              <h3 class="p-top-dx__feature-title">医療現場に強い<br class="u-mobile">ITエンジニアが担当</h3>
+              <h3 class="p-top-dx__feature-title">医療現場に強いITエンジニアが担当</h3>
             </div>
             <p class="p-top-dx__feature-desc">業界特有のルールや<br class="u-mobile"><span class="p-top-dx__feature-accent">個人情報管理を理解</span>した<wbr><br class="u-mobile"><span class=" p-top-dx__feature-accent--red">プロ</span>が対応。</p>
           </div>
@@ -185,7 +185,7 @@ $theme_uri = get_template_directory_uri();
               <p class="p-top-dx__feature-no">POINT <span class="p-top-dx__feature-no-num">03</span></p>
               <h3 class="p-top-dx__feature-title">「提案だけ」で終わらない伴走支援</h3>
             </div>
-            <p class="p-top-dx__feature-desc"><span class="p-top-dx__feature-accent">課題整理から実行サポートまで、<wbr></span><span class="p-top-dx__feature-accent--red">一貫</span>して寄り添います。<wbr></p>
+            <p class="p-top-dx__feature-desc"><span class="p-top-dx__feature-accent">課題整理から実行サポートまで、<wbr></span><span class="p-top-dx__feature-accent--red">一貫</span>して寄り添います！<wbr></p>
           </div>
         </li>
       </ol>
@@ -292,13 +292,13 @@ $theme_uri = get_template_directory_uri();
             </thead>
             <tbody>
               <tr>
-                <th scope="row">月額料金</th>
+                <th scope="row">月額<br class="u-mobile">料金</th>
                 <td>5万円</td>
                 <td>10万円</td>
                 <td>20万円</td>
               </tr>
               <tr>
-                <th scope="row">稼働時間目安/月</th>
+                <th scope="row">稼働<br class="u-mobile">時間<br class="u-mobile">目安/月</th>
                 <td>8時間</td>
                 <td>15時間</td>
                 <td>25時間</td>
@@ -341,7 +341,7 @@ $theme_uri = get_template_directory_uri();
           <p class="p-top-dx__flow-title">無料相談（現状ヒアリング）</p>
           <p class="p-top-dx__flow-desc">
                 課題を整理し、どんなサポートが必要か一緒に考えます。
-                <a class="p-top-dx__flow-link" href="/contact/">＞無料相談はこちら</a>
+                <a class="p-top-dx__flow-link" href="https://timerex.net/s/maimai.maiko.matsue_106c/dd00f206">＞無料相談はこちら</a>
               </p>
         </li>
         <li class="p-top-dx__flow-item">
@@ -363,8 +363,8 @@ $theme_uri = get_template_directory_uri();
             <span class="p-top-dx__cta-title-line2">DX化の第一歩は“<span class="p-top-dx__cta-accent">相談</span>”から。</span>
           </h2>
       <div class="p-top-dx__cta-actions">
-        <p class="p-top-dx__cta-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談。<span class="u-desktop">まずは気軽にご相談ください！</span></p>
-        <a class="c-dx-cta c-dx-cta--lg" href="/contact/">
+        <p class="p-top-dx__cta-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談！<span class="u-desktop">まずは気軽にご相談ください！</span></p>
+        <a class="c-dx-cta c-dx-cta--lg" href="https://timerex.net/s/maimai.maiko.matsue_106c/dd00f206">
           <span class="c-dx-cta__text">まずは気軽に無料相談</span>
           <span class="c-dx-cta__icon" aria-hidden="true"></span>
         </a>
@@ -506,8 +506,8 @@ $theme_uri = get_template_directory_uri();
           </h2>
 
       <div class="p-top-dx__cta-actions">
-        <p class="p-top-dx__cta-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談。<span class="u-desktop">まずは気軽にご相談ください！</span></p>
-        <a class="c-dx-cta c-dx-cta--lg" href="/contact/">
+        <p class="p-top-dx__cta-note">初回は忙しい先生でも安心の<br class="u-mobile">オンライン商談！<span class="u-desktop">まずは気軽にご相談ください！</span></p>
+        <a class="c-dx-cta c-dx-cta--lg" href="https://timerex.net/s/maimai.maiko.matsue_106c/dd00f206">
           <span class="c-dx-cta__text">まずは気軽に無料相談</span>
           <span class="c-dx-cta__icon" aria-hidden="true"></span>
         </a>

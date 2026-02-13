@@ -29,7 +29,7 @@ $footer_logo_path = $theme_dir . $footer_logo_rel;
 
 <?php if ( is_front_page() || is_page_template( 'page-lp.php' ) ) : ?>
 <div class="p-top-dx__fixed-bar">
-  <a class="c-dx-cta c-dx-cta--fixed" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+  <a class="c-dx-cta c-dx-cta--fixed" href="https://timerex.net/s/maimai.maiko.matsue_106c/dd00f206">
     <span class="c-dx-cta__text">まずは気軽に無料相談</span>
     <span class="c-dx-cta__icon" aria-hidden="true"></span>
   </a>
