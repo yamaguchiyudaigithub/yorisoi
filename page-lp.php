@@ -201,9 +201,8 @@ $theme_uri = get_template_directory_uri();
           <div class="p-top-dx__case-body">
             <p class="p-top-dx__case-tag">Case1</p>
             <h3 class="p-top-dx__case-title">
-                  来院受付<br />
-                  予約システムの導入支援
-                </h3>
+                  来院受付予約<br>システムの導入支援
+            </h3>
           </div>
         </article>
         <article class="p-top-dx__case-card">
@@ -211,7 +210,7 @@ $theme_uri = get_template_directory_uri();
           <div class="p-top-dx__case-body">
             <p class="p-top-dx__case-tag">Case2</p>
             <h3 class="p-top-dx__case-title">
-                  LINE公式アカウント導入・<br />
+                  LINE公式アカウント<br class="u-mobile">導入・<br class="u-desktop">
                   運用代行
                 </h3>
           </div>
@@ -220,7 +219,7 @@ $theme_uri = get_template_directory_uri();
           <img class="p-top-dx__case-image" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/case_img03.webp" width="340" height="261" alt="" />
           <div class="p-top-dx__case-body">
             <p class="p-top-dx__case-tag">Case3</p>
-            <h3 class="p-top-dx__case-title">電子カルテ導入サポート</h3>
+            <h3 class="p-top-dx__case-title">電子カルテ<br class="u-mobile">導入サポート</h3>
           </div>
         </article>
         <article class="p-top-dx__case-card">
