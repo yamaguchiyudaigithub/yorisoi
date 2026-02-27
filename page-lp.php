@@ -150,7 +150,7 @@ $theme_uri = get_template_directory_uri();
       <ol class="p-top-dx__feature-list">
         <li class="p-top-dx__feature-item p-top-dx__feature-item--img-left">
           <div class="p-top-dx__feature-visual" aria-hidden="true">
-            <img class="p-top-dx__feature-illust" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/feature_img03@2x.webp" width="280" height="280" alt="" />
+            <img class="p-top-dx__feature-illust" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/feature_img03@2x.webp" width="124" height="166" alt="" />
           </div>
           <div class="p-top-dx__feature-body">
             <div class="p-top-dx__feature-header">
@@ -173,19 +173,19 @@ $theme_uri = get_template_directory_uri();
               </p>
           </div>
           <div class="p-top-dx__feature-visual" aria-hidden="true">
-            <img class="p-top-dx__feature-illust" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/feature_img04@2x.webp" width="280" height="280" alt="" />
+            <img class="p-top-dx__feature-illust" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/feature_img04@2x.webp" width="203" height="152" alt="" />
           </div>
         </li>
         <li class="p-top-dx__feature-item p-top-dx__feature-item--img-left">
           <div class="p-top-dx__feature-visual" aria-hidden="true">
-            <img class="p-top-dx__feature-illust" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/feature_img05@2x.webp" width="280" height="280" alt="" />
+            <img class="p-top-dx__feature-illust" src="<?php echo esc_url( $theme_uri ); ?>/assets/images/feature-img05.png" width="429" height="283" alt="" />
           </div>
           <div class="p-top-dx__feature-body">
             <div class="p-top-dx__feature-header">
               <p class="p-top-dx__feature-no">POINT <span class="p-top-dx__feature-no-num">03</span></p>
               <h3 class="p-top-dx__feature-title">「提案だけ」で終わらない伴走支援</h3>
             </div>
-            <p class="p-top-dx__feature-desc"><span class="p-top-dx__feature-accent">課題整理から実行サポートまで、<wbr></span><span class="p-top-dx__feature-accent--red">一貫</span>して寄り添います！<wbr></p>
+            <p class="p-top-dx__feature-desc"><span class="p-top-dx__feature-accent">課題整理から実行サポート</span>まで、<span class="p-top-dx__feature-accent--red">一貫</span>して寄り添います！</p>
           </div>
         </li>
       </ol>

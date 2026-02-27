@@ -31,7 +31,6 @@ a[href^="tel"] {
 a {
   color: inherit;
   -webkit-tap-highlight-color: transparent;
-  /* 強調をなくす */
 }
 
 a:hover {
@@ -468,17 +467,7 @@ a {
   font-family: "Noto Sans JP";
   src: local("Noto Sans JP");
 }
-:root {
-  /* inner */
-  /* NOTE: postcss-cssnext (postcss-calc) が calc() 内の min()/max()/clamp() を含む式で落ちるため、
-     ここではカスタムプロパティを「単位付きの素直な値」にしておく。 */
-  /* z-index */
-  /* color */
-  /* font-weight */
-  /* font-family */
-  /* NOTE: postcss-cssnext が tan()/atan2() を含む calc() を解釈できず落ちるため、固定値にする（16px基準） */
-  /* transition duration */
-}
+
 
 @media screen and (min-width: 768px) {
   :root {
@@ -1142,17 +1131,6 @@ button {
 /* -----------------------------------------------------------------
    Component: misc / legacy stub notes
    ----------------------------------------------------------------- */
-/*
-  このファイルは、旧「全部入り」SCSS（_c-test.scss）を分割した後の互換スタブです。
-
-  旧定義は以下に移動しています:
-  - foundation/: ベース/リセット
-  - global/: CSSカスタムプロパティ
-  - layout/: .l- 系
-  - object/component/: .c- 系
-  - object/project/: .p- 系
-  - object/utility/: .u- 系
-*/
 .c-triangle {
   display: inline-block;
   width: 4rem;
@@ -1729,10 +1707,17 @@ button {
    Project: Header / Drawer
    ----------------------------------------------------------------- */
 .p-header {
-  --header-height: 80px;
+  --header-height: 50px;
   height: var(--header-height);
-  background-color: #fff;
   border-bottom: none;
+  background-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .p-header {
+    --header-height: 80px;
+    background-color: #fff;
+  }
 }
 
 .p-header.is-reveal-enabled {
@@ -1832,13 +1817,12 @@ button {
     12px,
     6vw,
     95px
-  ); /* ボタンとハンバーガー間：狭い画面では縮む、最大95px */
+  );
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-/* SP時はロゴ・エディション非表示、CTAも非表示（固定バーで表示） */
 .p-header__left {
   display: none;
 }
@@ -1930,6 +1914,8 @@ button {
   transition: opacity 0.2s ease;
 }
 
+
+
 @media (any-hover: hover) {
   .p-header__hamburger:hover {
     opacity: 0.7;
@@ -1984,6 +1970,36 @@ button {
 .p-header__hamburger.is-open span:nth-of-type(3) {
   -webkit-transform: translateY(-0.42475rem) rotate(-45deg);
   transform: translateY(-0.42475rem) rotate(-45deg);
+}
+
+@media (max-width: 767px) {
+  .p-header__hamburger {
+    width: 2.5rem;
+    height: 2rem;
+  }
+  .p-header__hamburger span {
+    height: 0.32rem;
+  }
+  .p-header__hamburger span:nth-of-type(1) {
+    -webkit-transform: translateY(-0.68rem);
+    transform: translateY(-0.68rem);
+  }
+  .p-header__hamburger span:nth-of-type(2) {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .p-header__hamburger span:nth-of-type(3) {
+    -webkit-transform: translateY(0.68rem);
+    transform: translateY(0.68rem);
+  }
+  .p-header__hamburger.is-open span:nth-of-type(1) {
+    -webkit-transform: translateY(0.32rem) rotate(45deg);
+    transform: translateY(0.32rem) rotate(45deg);
+  }
+  .p-header__hamburger.is-open span:nth-of-type(3) {
+    -webkit-transform: translateY(-0.32rem) rotate(-45deg);
+    transform: translateY(-0.32rem) rotate(-45deg);
+  }
 }
 
 .p-header__drawer {
@@ -2281,7 +2297,7 @@ button {
   position: fixed;
   top: 1.75rem;
   right: clamp(16px, 2.5vw, 40px);
-  z-index: 1001; /* ドロワー(1000)より前面に×を表示 */
+  z-index: 1001;
 }
 
 /* -----------------------------------------------------------------
@@ -2559,7 +2575,6 @@ button {
     max-width: 640px;
     padding-inline: 16px;
   }
-  /* cases：カード幅に合わせて375px（固定幅） */
   .p-top-dx__plan-table-wrap {
     margin-inline: -16px;
     padding-inline: 16px;
@@ -2593,7 +2608,7 @@ button {
   margin: 0;
   font-size: clamp(1.5625rem, 2.5vw, 3rem);
   font-weight: 700;
-  line-height: 1.0;
+  line-height: 1;
   text-align: center;
   letter-spacing: 0.05em;
 }
@@ -2701,7 +2716,7 @@ button {
     overflow-x: hidden;
   }
 }
-/* FV：フルイド＋最大幅コンテナ（SP 640px・padding 16px） */
+
 .p-top-dx__fv-inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -2726,13 +2741,13 @@ button {
     row-gap: clamp(8px, 1vw, 16px);
     padding-left: clamp(0.75rem, 6vw, 107px);
     padding-right: 0;
-    max-width: none; /* PC：フルイド幅に */
+    max-width: none;
     width: 100%;
     min-height: min(
       1100px,
       57.3vw
-    ); /* 画像高さ 42.86vw*1100/823 に合わせてはみ出さない */
-    overflow: hidden; /* 画像をFV内にクリップ */
+    );
+    overflow: hidden;
   }
 }
 @media (min-width: 1560px) {
@@ -2740,7 +2755,7 @@ button {
     grid-template-columns: minmax(22.5rem, 1fr) min(823px, 42.86vw);
   }
 }
-/* 1920px以上：画像823×1100に合わせてインナーを固定 */
+
 @media (min-width: 1920px) {
   .p-top-dx__fv-inner {
     grid-template-columns: minmax(22.5rem, 1fr) 823px;
@@ -2792,7 +2807,7 @@ button {
   align-items: flex-start;
   min-width: 0;
   position: relative;
-  z-index: 2; /* 画像より前面で重ならない */
+  z-index: 2;
 }
 
 .p-top-dx__fv-copy-top {
@@ -2810,7 +2825,7 @@ button {
   .p-top-dx__fv-copy-bottom {
     min-width: 0;
     overflow: hidden;
-    padding-right: 1rem; /* 画像との重なり防止 */
+    padding-right: 1rem;
   }
   .p-top-dx__fv-copy-top {
     -webkit-box-ordinal-group: 3;
@@ -2836,7 +2851,7 @@ button {
     grid-column: 2;
     grid-row: 1/-1;
     min-width: 0;
-    overflow: hidden; /* FV内に収める */
+    overflow: hidden;
   }
 
   .p-top-dx__fv-copy-bottom {
@@ -2859,7 +2874,7 @@ button {
 
 @media (min-width: 768px) and (max-width: 1439px) {
   .p-top-dx__fv-copy-bottom {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 }
 
@@ -2916,10 +2931,10 @@ button {
 }
 
 @media (max-width: 767px) {
-  /* SPでは改行を許可してはみ出しを防ぐ */
   .p-top-dx__fv-title,
   .p-top-dx__fv-lead {
     white-space: normal;
+    line-height: 1.5;
   }
 }
 
@@ -2931,13 +2946,14 @@ button {
   .p-top-dx__fv-title-strong {
     font-size: clamp(30px, 2.7vw, 48px);
     letter-spacing: 0.02em;
+    line-height: 1.65;
   }
 }
 .p-top-dx__fv-title-strong {
   display: inline-block;
-  font-size: clamp(40px, 9vw, 65px);
+  font-size: clamp(40px, 3.5vw, 65px);
   letter-spacing: 0.05em;
-  line-height: 1.65;
+  line-height: 1.4;
 }
 
 .p-top-dx__fv-brand {
@@ -3003,11 +3019,13 @@ button {
 
 .p-top-dx__fv-lead {
   margin: 0 0 clamp(1.25rem, 4.2vw, 2.3125rem) 0;
-  font-size: clamp(18px, 3.5vw, 30px);
+  font-size: clamp(18px, 3.2vw, 30px);
   font-weight: 500;
   line-height: 1.7;
   min-width: 0;
   max-width: 100%;
+  overflow-wrap: anywhere;
+  width: min(100%, 100%);
 }
 
 @media (min-width: 768px) and (max-width: 1719px) {
@@ -3016,7 +3034,7 @@ button {
     letter-spacing: 0.02em;
   }
 }
-/* FV・Problems CTA 共通：ノート＋斜めライン、CTA余白 */
+
 .p-top-dx__fv-note,
 .p-top-dx__problems-cta-note {
   position: relative;
@@ -3061,7 +3079,6 @@ button {
   translate: 0 -50%;
 }
 
-/* Problems CTAノートのみ斜めラインを内側に */
 .p-top-dx__problems-cta-note::before {
   left: 2.5rem;
 }
@@ -3085,7 +3102,6 @@ button {
   }
 }
 
-/* 画面狭いとき：斜めラインを短くして文字と被らないように */
 @media (min-width: 768px) and (max-width: 1100px) {
   .p-top-dx__fv-note::before,
   .p-top-dx__fv-note::after,
@@ -3095,7 +3111,6 @@ button {
   }
 }
 
-/* fv-actions 専用：斜めラインを内側に・やや長めに */
 @media (max-width: 1200px) {
   .p-top-dx__fv-actions .p-top-dx__fv-note {
     padding-inline: clamp(1rem, 3vw, 1.5rem);
@@ -3103,22 +3118,21 @@ button {
   .p-top-dx__fv-actions .p-top-dx__fv-note::before,
   .p-top-dx__fv-actions .p-top-dx__fv-note::after {
     width: clamp(1.5rem, 5vw, 2.25rem);
-    left: clamp(1.5rem, 4vw, 2rem);
+    left: clamp(1rem, 1.5vw, 2rem);
   }
   .p-top-dx__fv-actions .p-top-dx__fv-note::after {
-    right: clamp(1.5rem, 4vw, 2rem);
+    right: clamp(1rem, 1.5vw, 2rem);
     left: auto;
   }
 }
 
-/* SP：斜めラインを短く・内側寄せして文字と重ならないように */
 @media (max-width: 767px) {
   .p-top-dx__fv-actions .p-top-dx__fv-note {
     padding-inline: 2rem;
   }
   .p-top-dx__fv-actions .p-top-dx__fv-note::before,
   .p-top-dx__fv-actions .p-top-dx__fv-note::after {
-    width: 1.25rem;
+    width: 2rem;
     left: 0.5rem;
   }
   .p-top-dx__fv-actions .p-top-dx__fv-note::after {
@@ -3127,7 +3141,6 @@ button {
   }
 }
 
-/* PC：斜めラインを内側寄せして文字と重ならないように */
 @media (min-width: 1201px) {
   .p-top-dx__fv-actions .p-top-dx__fv-note {
     padding-inline: clamp(3rem, 5vw, 5rem);
@@ -3159,7 +3172,7 @@ button {
     20rem,
     45vw,
     720px
-  ); /* 画面幅に合わせて縮小（1920pxで720px） */
+  );
   min-width: 0;
   overflow: visible;
   box-sizing: border-box;
@@ -3171,14 +3184,12 @@ button {
   margin-right: auto;
 }
 
-/* Figma 63-29：CTAは幅いっぱい（親に合わせて伸ばす） */
 .p-top-dx__fv-actions .c-dx-cta {
   width: 100%;
   max-width: 100%;
   display: inline-grid;
 }
 
-/* FV actions：画面幅に合わせて高さ・余白も縮小（最小はやや大きめ） */
 @media (min-width: 768px) {
   .p-top-dx__fv-actions {
     margin-right: 0.5rem;
@@ -3197,14 +3208,33 @@ button {
     font-size: clamp(16px, 1.8vw, 35px);
   }
   .p-top-dx__fv-actions .c-dx-cta .c-dx-cta__icon {
-    right: clamp(1rem, 1.3vw, 1.5rem);
-    width: clamp(1.75rem, 2vw, 2.25rem);
-    height: clamp(1.75rem, 2vw, 2.25rem);
+    right: clamp(1rem, 2vw, 3rem);
+    width: clamp(1.75rem, 2vw, 3rem);
+    height: clamp(1.75rem, 2vw, 3rem);
   }
   .p-top-dx__fv-actions .c-dx-cta .c-dx-cta__icon::after {
-    width: clamp(7px, 0.8vw, 9px);
-    height: clamp(7px, 0.8vw, 9px);
+    width: clamp(7px, 0.8vw, 12px);
+    height: clamp(7px, 0.8vw, 12px);
     border-width: clamp(2.5px, 0.28vw, 3px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .p-top-dx__fv-actions .c-dx-cta {
+    min-height: 80px;
+    padding: 1.25rem 2.25rem;
+    border-radius: 2.25rem;
+  }
+  .p-top-dx__fv-actions .c-dx-cta .c-dx-cta__text {
+    font-size: clamp(16px, 1.7vw, 22px);
+  }
+  .p-top-dx__fv-actions .c-dx-cta .c-dx-cta__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .p-top-dx__fv-actions .c-dx-cta .c-dx-cta__icon::after {
+    width: 7px;
+    height: 7px;
   }
 }
 
@@ -3220,7 +3250,6 @@ button {
   }
 }
 
-/* Problems CTA：SP = Figma 89-340 / PC = Figma 2183-54 */
 .p-top-dx__problems-cta-actions {
   text-align: center;
   width: 100%;
@@ -3241,7 +3270,6 @@ button {
 }
 
 @media (min-width: 768px) {
-  /* PCでは1行表示にする（brがあっても折り返さない） */
   .p-top-dx__problems-cta-actions-note {
     white-space: nowrap;
   }
@@ -3374,7 +3402,6 @@ button {
 
 @media screen and (min-width: 768px) {
   .p-top-dx__problems-cta-actions-btn {
-    /* FVボタンと同サイズ */
     min-height: clamp(5rem, 5.5vw, 8.25rem);
     padding: 2.5rem 5.5rem;
     border-radius: 3.125rem;
@@ -3417,24 +3444,26 @@ button {
 
 @media (max-width: 767px) {
   .p-top-dx__fv-media {
-    /* 画像を画面幅いっぱいに広げる */
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: calc(100% + 32px);
+    margin-inline: -16px;
+    max-width: none;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
+
   .p-top-dx__fv-media-wrap {
     width: 100%;
     max-width: none;
   }
+
   .p-top-dx__fv-media img {
     width: 100%;
+    height: auto;
     display: block;
     vertical-align: top;
   }
 }
 
-/* FV SP：ロゴ＋医療版のみ調整 */
 @media (max-width: 767px) {
   .p-top-dx__fv-brand {
     -webkit-box-orient: vertical;
@@ -3459,7 +3488,6 @@ button {
 }
 @media (min-width: 768px) {
   .p-top-dx__fv-media {
-    /* 画像823×1100に合わせて列の高さを確保（切れないように） */
     min-height: min(1100px, 57.3vw);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3574,7 +3602,6 @@ button {
     white-space: nowrap;
     font-size: clamp(18px, 1.4vw, 26px);
   }
-  /* 改行しないよう列幅に合わせてフォント縮小 */
   @container fv-copy (min-width: 0px) {
     .p-top-dx__fv-copy-top .p-top-dx__fv-title {
       font-size: min(clamp(14px, 1.8vw, 34px), 4.5cqw);
@@ -3642,7 +3669,6 @@ button {
   background-color: #fff;
   background-image: url("../images/bg_img01-sp@2x.webp");
   background-repeat: no-repeat;
-  /* 画像全体を表示して下寄せ */
   background-size: contain;
   background-position: center 120%;
   padding-top: 3.5rem;
@@ -3685,7 +3711,7 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(20px, 2.5vw, 28px);
-  margin: clamp(32px, 4.25vw, 81px) auto 0; /* 4.25vwで最大81pxまで届く（1920pxで81px） */
+  margin: clamp(32px, 4.25vw, 81px) auto 0;
   padding: 0;
   list-style: none;
   justify-items: center;
@@ -3721,14 +3747,9 @@ button {
   margin-inline: auto;
   aspect-ratio: 1/1;
   padding: clamp(14px, 4vw, 24px);
-  background: #F6F9F8;
+  background: #f6f9f8;
   border-radius: 50%;
-  -webkit-box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    0 1px 2px rgba(0, 0, 0, 0.04);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.25);
   -webkit-transition:
     -webkit-transform 0.3s ease,
     -webkit-box-shadow 0.3s ease;
@@ -3759,6 +3780,7 @@ button {
   object-position: center;
   margin-inline: auto;
   justify-self: center;
+  background-color: inherit;
 }
 
 .p-top-dx__problem-item:first-child .p-top-dx__problem-icon {
@@ -3832,14 +3854,13 @@ button {
 .p-top-dx__problems-cta {
   position: relative;
   margin-top: -1px;
-  padding: clamp(40px, 6vw, 72px) 0;
+  padding: clamp(20px, 6vw, 72px) 0;
   background: linear-gradient(165deg, #d4eef2 0%, #e2f4f6 40%, #e8f6f8 100%);
   background-color: #eaf7f9;
   overflow: hidden;
   text-align: center;
 }
 
-/* 統合セクション: 上は白、画像の下は水色 */
 .p-top-dx__problems.p-top-dx__problems-cta {
   position: relative;
   overflow: hidden;
@@ -3900,7 +3921,7 @@ button {
 .p-top-dx__problems-cta-area {
   position: relative;
   margin-top: clamp(20px, 3vw, 56px);
-  padding: clamp(40px, 6vw, 72px) 0;
+  padding: clamp(20px, 6vw, 72px) 0;
   overflow-x: clip;
 }
 
@@ -3941,7 +3962,7 @@ button {
 @media (min-width: 768px) {
   .p-top-dx__problems .p-top-dx__container {
     width: min(1621px, calc(100% - 10vw));
-    max-width: 1621px; /* 1525 + 2 * 48 (padding) */
+    max-width: 1621px;
     margin-inline: auto;
     padding-inline: clamp(1rem, 2.5vw, 3rem);
     -webkit-box-sizing: border-box;
@@ -4243,7 +4264,6 @@ button {
   }
 }
 
-/* 画面狭いとき：CTAはみ出しを抑える */
 @media (min-width: 768px) and (max-width: 1000px) {
   .p-top-dx__problems-cta .p-top-dx__problems-cta-actions {
     margin-inline: clamp(-24px, -3vw, -48px);
@@ -4389,7 +4409,7 @@ button {
   .p-top-dx__features .p-top-dx__section-title {
     font-size: clamp(24px, 6cqw, 45px);
     text-align: center;
-    margin: 0 0 clamp(20px, 6cqw, 53px); /* 6cqwで最大53pxまで届く（コンテナ～1550pxで53px） */
+    margin: 0 0 clamp(20px, 6cqw, 53px);
   }
 }
 
@@ -4513,7 +4533,6 @@ button {
 }
 
 @media (min-width: 768px) {
-  /* PC：Figma 2183-58 タイトル中央 → 左写真(緑文と上揃え) | 中央文 | 右写真(2行目付近から下にはみ出す) */
   .p-top-dx__feature-intro {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4687,11 +4706,12 @@ button {
     padding: 20px 16px;
   }
   .p-top-dx__feature-visual {
+    width: clamp(200px, 53.33vw, 220px);
     max-width: min(220px, calc(100cqw - 72px));
   }
   .p-top-dx__feature-item:nth-child(2) .p-top-dx__feature-visual,
   .p-top-dx__feature-item:nth-child(3) .p-top-dx__feature-visual {
-    width: min(300px, calc(100cqw - 72px));
+    width: clamp(260px, 69.33vw, 300px);
     max-width: min(300px, calc(100cqw - 72px));
   }
   .p-top-dx__feature-desc {
@@ -4699,6 +4719,12 @@ button {
     min-width: 0;
     word-break: break-word;
     overflow-wrap: break-word;
+  }
+  .p-top-dx__feature-item:nth-child(2) .p-top-dx__feature-illust {
+    width: 90%;
+  }
+  .p-top-dx__feature-item:nth-child(3) .p-top-dx__feature-illust {
+    width: 77%;
   }
 }
 
@@ -4721,7 +4747,8 @@ button {
   -ms-flex-align: stretch;
   align-items: stretch;
   gap: 0;
-  padding: clamp(24px, 6vw, 32px);
+  padding-block: clamp(24px, 6vw, 32px);
+  padding-inline: clamp(12px, 2.8vw, 24px);
   background: #fff;
   border-radius: 12px;
   -webkit-box-sizing: border-box;
@@ -4762,6 +4789,16 @@ button {
   background: #fff;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+.p-top-dx__feature-item:nth-child(1) .p-top-dx__feature-visual {
+  aspect-ratio: 124 / 166;
+}
+.p-top-dx__feature-item:nth-child(2) .p-top-dx__feature-visual {
+  aspect-ratio: 203 / 152;
+}
+.p-top-dx__feature-item:nth-child(3) .p-top-dx__feature-visual {
+  aspect-ratio: 429 / 283;
 }
 
 .p-top-dx__feature-header {
@@ -4813,6 +4850,8 @@ button {
 .p-top-dx__features .p-top-dx__feature-accent {
   color: #2b858d;
   font-size: clamp(25px, 4cqw, 32px);
+  line-height: calc(40 / 25);
+  letter-spacing: 0.05em;
 }
 
 .p-top-dx__feature-accent--red {
@@ -4868,8 +4907,14 @@ button {
     order: unset;
     width: clamp(180px, 22cqw, 380px);
     height: clamp(180px, 22cqw, 380px);
+    aspect-ratio: 1;
     margin-inline: unset;
     margin-bottom: 0;
+  }
+  .p-top-dx__feature-item:nth-child(1) .p-top-dx__feature-visual,
+  .p-top-dx__feature-item:nth-child(2) .p-top-dx__feature-visual,
+  .p-top-dx__feature-item:nth-child(3) .p-top-dx__feature-visual {
+    aspect-ratio: 1;
   }
   .p-top-dx__feature-header {
     -webkit-box-orient: horizontal;
@@ -4980,13 +5025,14 @@ button {
   letter-spacing: 0.06em;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .p-top-dx__feature-no-num {
   font-weight: 700;
+  line-height: 1;
 }
 
-/* 各POINTの見出し */
 .p-top-dx__feature-title {
   margin: 0;
   font-weight: 700;
@@ -5029,7 +5075,7 @@ button {
 @media (min-width: 768px) {
   .p-top-dx__cases .p-top-dx__container {
     width: min(1608px, calc(100% - 10vw));
-    max-width: 1608px; /* 1512 + 2 * 48 (padding) */
+    max-width: 1608px;
     margin-inline: auto;
     padding-inline: clamp(1rem, 3vw, 3rem);
     -webkit-box-sizing: border-box;
@@ -5057,13 +5103,13 @@ button {
   }
   .p-top-dx__case-card {
     width: 100%;
-    max-width: none; /* 375pxコンテナ幅いっぱいに伸ばす */
+    max-width: none;
   }
 }
 
 @media screen and (min-width: 768px) {
   .p-top-dx__cases .p-top-dx__section-title {
-    margin: 0 0 clamp(20px, 6cqw, 93px); /* 6cqwで最大93pxまで届く（コンテナ～1550pxで93px） */
+    margin: 0 0 clamp(20px, 6cqw, 93px);
   }
   .p-top-dx__case-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -5076,19 +5122,18 @@ button {
 
 .p-top-dx__case-card {
   display: grid;
-  grid-template-columns: 4fr 6fr; /* 画像:文章 = 4:6 */
+  grid-template-columns: 4fr 6fr;
   grid-template-rows: auto;
   overflow: hidden;
   background: #fff;
   border-radius: 12px;
-  -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   min-height: 130px;
 }
 
 @media screen and (min-width: 768px) {
   .p-top-dx__case-card {
-    grid-template-columns: 4fr 6fr; /* 画像:文章 = 4:6 */
+    grid-template-columns: 4fr 6fr;
     grid-template-rows: 1fr;
     aspect-ratio: 734/261;
     background: #fff;
@@ -5123,7 +5168,8 @@ button {
   }
 }
 .p-top-dx__case-body {
-  padding: clamp(14px, 4cqw, 20px) 0 clamp(14px, 4cqw, 20px) clamp(15px, 4cqw, 20px);
+  padding: clamp(14px, 4cqw, 20px) 0 clamp(14px, 4cqw, 20px)
+    clamp(15px, 4cqw, 20px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5134,12 +5180,13 @@ button {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #F6F9F8;
+  background: #f6f9f8;
 }
 
 @media screen and (min-width: 768px) {
   .p-top-dx__case-body {
-    padding: clamp(1rem, 2.8cqw, 3.375rem) 0 clamp(1rem, 2.8cqw, 3.375rem) clamp(15px, 2cqw, 2.25rem);
+    padding: clamp(1rem, 2.8cqw, 3.375rem) 0 clamp(1rem, 2.8cqw, 3.375rem)
+      clamp(15px, 2cqw, 2.25rem);
     display: block;
   }
 }
@@ -5226,7 +5273,7 @@ button {
 @media (min-width: 768px) {
   .p-top-dx__plan .p-top-dx__container {
     width: min(1520px, calc(100% - 15vw));
-    max-width: 1520px; /* 1424 + 2 * 48 (padding) */
+    max-width: 1520px;
     margin-inline: auto;
     padding-inline: clamp(1rem, 2.5vw, 3rem);
     -webkit-box-sizing: border-box;
@@ -5270,7 +5317,6 @@ button {
   margin-bottom: clamp(20px, 4.5cqw, 24px);
 }
 
-/* SP: Figma 89-596 横スクロール */
 .p-top-dx__plan-table-wrap {
   overflow-x: auto;
   overflow-y: hidden;
@@ -5539,7 +5585,7 @@ button {
 @media (min-width: 768px) {
   .p-top-dx__flow .p-top-dx__container {
     width: min(1210px, max(860px, calc(1146 * 100vw / 1920 + 64px)), 100%);
-    max-width: min(1210px, 100%); /* 768px付近で横はみ出し防止 */
+    max-width: min(1210px, 100%);
     margin-inline: auto;
     padding-inline: clamp(1rem, 2vw, 2rem);
     -webkit-box-sizing: border-box;
@@ -5636,13 +5682,16 @@ button {
   text-decoration: underline;
 }
 
-/* ===== CTA section（Figma 65:121） ===== */
 .p-top-dx__cta {
   position: relative;
   padding-top: clamp(56px, 9vw, 112px);
   padding-bottom: clamp(56px, 9vw, 149px);
-  background: #fff;
+  background: #f6f9f8;
   overflow-x: clip;
+}
+
+.p-top-dx__cta ~ .p-top-dx__cta {
+  background: #fff;
 }
 
 .p-top-dx__cta-title {
@@ -5673,7 +5722,7 @@ button {
   .p-top-dx__cta .p-top-dx__container,
   .p-top-dx__bottom-cta .p-top-dx__container {
     width: min(1633px, calc(100% - 10vw));
-    max-width: 1633px; /* 1537 + 2 * 48 (padding) */
+    max-width: 1633px;
     margin-inline: auto;
     padding-inline: clamp(1rem, 2.5vw, 3rem);
     -webkit-box-sizing: border-box;
@@ -5776,7 +5825,6 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-  /* PCでは1行表示（problems-cta-actions-note と同じ） */
   .p-top-dx__cta .p-top-dx__cta-actions .p-top-dx__cta-note,
   .p-top-dx__bottom-cta .p-top-dx__cta-actions .p-top-dx__cta-note {
     white-space: nowrap;
@@ -5846,7 +5894,6 @@ button {
   }
   .p-top-dx__cta .p-top-dx__cta-actions .c-dx-cta,
   .p-top-dx__bottom-cta .p-top-dx__cta-actions .c-dx-cta {
-    /* FVボタンと同サイズ（SP） */
     min-height: 62px;
     padding: clamp(0.75rem, 2vw, 1.125rem) clamp(1.5rem, 4vw, 5.5rem)
       clamp(0.75rem, 2vw, 1.125rem) clamp(1rem, 2.5vw, 2rem);
@@ -5863,7 +5910,6 @@ button {
 @media screen and (min-width: 768px) {
   .p-top-dx__cta .p-top-dx__cta-actions .c-dx-cta,
   .p-top-dx__bottom-cta .p-top-dx__cta-actions .c-dx-cta {
-    /* FVボタンと同サイズ（PC） */
     min-height: clamp(62px, 5.5vw, 8.25rem);
     padding: 2.5rem 5.5rem;
     border-radius: 3.125rem;
@@ -5890,15 +5936,13 @@ button {
   }
 }
 
-/* 3ステップエリア */
 .p-top-dx__cta-steps-wrap {
   margin-top: clamp(32px, 4vw, 56px);
   padding: clamp(28px, 4vw, 48px) 0;
-  background: #fff;
+  background: inherit;
   min-width: 0;
 }
 
-/* 1ステップ目のみ：Zoom/Meet/Teams 連携（Figma 2161-12） */
 .p-top-dx__cta-step-badges {
   margin: 0 0 clamp(12px, 1.5vw, 20px);
   font-size: clamp(0.75rem, 1.2vw, 0.875rem);
@@ -5924,7 +5968,6 @@ button {
     gap: 1.3125rem;
   }
 }
-/* 1つの画像＋キャプション＝1枚の青（水色）背景カード（SPは従来どおり・PCのみ幅可変） */
 .p-top-dx__cta-step {
   display: grid;
   grid-template-columns: 1fr;
@@ -5974,7 +6017,6 @@ button {
   }
 }
 
-/* SP: 画像はカード幅いっぱい（従来どおり） */
 .p-top-dx__cta-step-visual {
   min-width: 0;
   width: 100%;
@@ -6011,7 +6053,6 @@ button {
   }
 }
 
-/* コンテナ幅で画像を強制縮小（intrinsic を上書き）・カード内でやや小さめ・枠内に必ず収める */
 @container (min-width: 0px) {
   .p-top-dx__cta-step-img {
     width: 90cqw;
@@ -6157,7 +6198,6 @@ button {
   text-align: inherit;
   word-wrap: break-word;
 }
-/* ===== SP: 固定バー（無料相談 左 + TOPに戻る 右） / PC: TOPに戻るのみ ===== */
 .p-top-dx__fixed-bar {
   position: fixed;
   bottom: 0;
@@ -6180,6 +6220,14 @@ button {
   background: transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.p-top-dx__fixed-bar.is-hidden-in-fv {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .p-top-dx__fixed-bar .c-dx-cta--fixed {
@@ -6225,7 +6273,6 @@ button {
     display: none;
   }
 }
-/* ===== To top（Figma 89:1061 通常 / 89:1075 ホバー） ===== */
 .p-top-dx__to-top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6267,7 +6314,6 @@ button {
     -webkit-box-shadow 0.2s ease;
 }
 
-/* 固定バー内では位置はバーに任せる */
 .p-top-dx__fixed-bar .p-top-dx__to-top {
   position: static;
 }
@@ -6296,7 +6342,6 @@ button {
   transition: border-bottom-color 0.2s ease;
 }
 
-/* ===== Company（Figma 89-839 SP） ===== */
 .p-top-dx__company {
   background: #fff;
   padding-top: clamp(56px, 9vw, 93px);
@@ -6312,7 +6357,7 @@ button {
 @media (min-width: 768px) {
   .p-top-dx__company .p-top-dx__container {
     width: min(1338px, calc(1242 * 100vw / 1920 + 96px));
-    max-width: 1338px; /* 1242 + 2 * 48 (padding) at 1920 */
+    max-width: 1338px;
     margin-inline: auto;
     padding-inline: clamp(1rem, 2.5vw, 3rem);
     -webkit-box-sizing: border-box;
@@ -6360,7 +6405,7 @@ button {
   align-items: flex-start;
   padding: 0.625rem 1.5rem 0.875rem;
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
@@ -6387,7 +6432,7 @@ button {
 /* ===== Staff ===== */
 .p-top-dx__staff {
   position: relative;
-  z-index: 2; /* staff-summary が下の bottom-cta にはみ出るため、前面に表示 */
+  z-index: 2;
   padding-top: clamp(56px, 7vw, 82px);
   padding-bottom: clamp(56px, 7vw, 140px);
   background: #eaf7f9;
@@ -6399,7 +6444,7 @@ button {
       340px,
       30vw,
       460px
-    ); /* staff-summary の負 margin 分だけ下で切る */
+    );
   }
 }
 .p-top-dx__staff-people {
@@ -6449,7 +6494,6 @@ button {
   border-radius: 9999px;
 }
 
-/* SP：グリッドのセルに引き伸ばされないようにする */
 @media screen and (max-width: 767px) {
   .p-top-dx__staff-photo {
     align-self: start;
@@ -6490,12 +6534,11 @@ button {
 
 .p-top-dx__staff-bio {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.9;
   font-weight: 400;
 }
 
-/* SP時のみ：ある程度で省略し「続きを読む」で展開 */
 @media screen and (max-width: 767px) {
   .p-top-dx__staff-bio-wrap:not(.is-open) .p-top-dx__staff-bio {
     display: -webkit-box;
@@ -6527,7 +6570,6 @@ button {
     display: none;
   }
 }
-/* 白いカード：SPははみ出さない、PCのみ下のセクションにはみ出す */
 .p-top-dx__staff-summary {
   position: relative;
   z-index: 1;
@@ -6545,7 +6587,6 @@ button {
 
 @media (max-width: 767px) {
   .p-top-dx__staff-summary {
-    /* SP：画面幅に合わせて広げる（左右16px余白、最大375px） */
     width: min(375px, calc(100vw - 32px));
   }
 }
@@ -6661,7 +6702,7 @@ button {
 
 @media screen and (min-width: 768px) {
   .p-top-dx__bottom-cta {
-    padding-top: clamp(380px, 32vw, 420px); /* staff-summary はみ出し分 */
+    padding-top: clamp(380px, 32vw, 420px);
   }
 }
 .p-top-dx__bottom-cta-title {
@@ -6676,7 +6717,6 @@ button {
   color: #ed7872;
 }
 
-/* ボタン（Problems CTA と同一スタイル） */
 .p-top-dx__bottom-cta .p-top-dx__container {
   text-align: center;
 }
@@ -6717,13 +6757,11 @@ button {
   .u-desktop {
     display: block;
   }
-  /* problems CTAノート内は横並び */
   .p-top-dx__problems-cta-actions-note .u-desktop {
     display: inline;
   }
 }
 
-/* 768px〜1024px のときだけ表示（改行などに使用） */
 .u-tablet {
   display: none;
 }
@@ -6735,7 +6773,6 @@ button {
     display: block;
   }
 }
-/* スマホでもタブレットと同じ改行位置にする */
 @media screen and (max-width: 767px) {
   br.u-tablet {
     display: block;
@@ -6793,22 +6830,18 @@ button {
   }
 }
 
-/* SP：767px以下はコンテンツを640px幅に、背景は全幅に */
 @media (max-width: 767px) {
   .p-top-dx {
     overflow-x: clip;
   }
-  /* ヘッダー：コンテンツのみ640pxに制限（背景は全幅） */
   .p-header__inner {
     max-width: 640px;
     margin-inline: auto;
     width: 100%;
     padding-inline: 16px;
   }
-  /* FV：baseで640px・padding16pxを指定済み、fv-mediaは100vwでフルイド */
 }
 
-/* SPコンテンツ幅：containerに合わせて640px・padding 16px */
 @media (max-width: 767px) {
   .p-top-dx__container,
   .p-top-dx__problems .p-top-dx__container,
@@ -6829,7 +6862,6 @@ button {
     margin-inline: -16px !important;
     padding-inline: 16px !important;
   }
-  /* 767以下：はみ出しを抑えて640px内に収める */
   .p-top-dx__problems-cta .c-dx-cta,
   .p-top-dx__problems-cta .p-top-dx__problems-cta-actions {
     margin-inline: 0;
